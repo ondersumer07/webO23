@@ -4,19 +4,69 @@
 	export let weatherState = 'Sunny';
 	export let degreesCelcius = 21;
 
+	// Get timezone date and hour / CHANGE TIMEZONE WHEN CHANGING CITIES
+	let currentDate = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' });
+	let currentHour = Number(currentDate.split(' ')[1].slice(0, 2));
+
 	// Get current time on load, might add refresh feature
 	function momentTime() {
-		let currentDate = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/' + currentCity });
 		let currentDayofYear = currentDate.split(' ')[0];
 		let currentTime = currentDate.split(' ')[1].slice(0, 5);
 		return [currentTime, currentDayofYear];
 	}
+
+	// Create and decide on background URL
+	let backgroundUrl = "bg-[url('/weatherBg/sunny.svg')]";
+
+	if (weatherState == 'Clear' && 7 < currentHour && currentHour < 20) {
+		backgroundUrl = "bg-[url('/weatherBg/sunny.svg')]";
+	} else if (weatherState == 'Clear') {
+		backgroundUrl = "bg-[url('/weatherBg/night.svg')]";
+	} else if (
+		(weatherState == 'Clouds' ||
+			weatherState == 'Mist' ||
+			weatherState == 'Smoke' ||
+			weatherState == 'Haze' ||
+			weatherState == 'Dust' ||
+			weatherState == 'Fog' ||
+			weatherState == 'Sand' ||
+			weatherState == 'Ash' ||
+			weatherState == 'Squal') &&
+		7 < currentHour &&
+		currentHour < 20
+	) {
+		backgroundUrl = "bg-[url('/weatherBg/cloudy.svg')]";
+	} else if (
+		weatherState == 'Clouds' ||
+		weatherState == 'Mist' ||
+		weatherState == 'Smoke' ||
+		weatherState == 'Haze' ||
+		weatherState == 'Dust' ||
+		weatherState == 'Fog' ||
+		weatherState == 'Sand' ||
+		weatherState == 'Ash' ||
+		weatherState == 'Squal'
+	) {
+		backgroundUrl = "bg-[url('/weatherBg/cloudy-night.svg')]";
+	} else if (
+		weatherState == 'Rain' ||
+		weatherState == 'Thunderstorm' ||
+		weatherState == 'Tornado' ||
+		weatherState == 'Drizzle'
+	) {
+		backgroundUrl = "bg-[url('/weatherBg/rainy.svg')]";
+	} else if (weatherState == 'Snow') {
+		backgroundUrl = "bg-[url('/weatherBg/snowy.svg')]";
+	}
+
+	// Log Background URL
+	console.log(backgroundUrl);
 </script>
 
 <!-- min-w to visualize properly -->
 <div class="card w-screen rounded-lg md:w-auto md:min-w-[350px]">
 	<header class="card-header p-0">
-		<div class="rounded-lg bg-[url('/weatherBg/rainy.svg')] bg-cover bg-no-repeat px-6 py-4">
+		<div class="rounded-lg {backgroundUrl} bg-cover bg-no-repeat px-6 py-4">
 			<div class="flex h-full flex-row justify-between">
 				<div class="items-between mr-4 flex grow flex-col justify-between md:mr-8">
 					<h3 class="h4 text-primary-100 md:h3">{weatherState}</h3>

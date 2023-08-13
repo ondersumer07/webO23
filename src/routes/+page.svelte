@@ -3,6 +3,7 @@
 
 	// Get data from +page.server.js
 	export let data;
+	console.log(data.weather.weather[0].main);
 
 	// Create variables fetched from API
 	let currentCity = data.weather.name;
