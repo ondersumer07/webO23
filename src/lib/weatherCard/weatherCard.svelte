@@ -5,7 +5,7 @@
 	export let degreesCelcius = 21;
 
 	// Get timezone date and hour / CHANGE TIMEZONE WHEN CHANGING CITIES
-	let currentDate = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' });
+	let currentDate = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/' + currentCity });
 	let currentHour = Number(currentDate.split(' ')[1].slice(0, 2));
 
 	// Get current time on load, might add refresh feature

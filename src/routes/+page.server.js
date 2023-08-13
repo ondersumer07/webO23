@@ -2,7 +2,7 @@
 import { OPEN_WEATHER_API_KEY } from '$env/static/private';
 
 // City to change when I leave Istanbul
-let currentCity = 'Kocaeli';
+let currentCity = 'Istanbul';
 
 // Main Function
 export const load = async () => {

@@ -1,5 +1,5 @@
 <script>
-	import WeatherCard from './../lib/navigation/weatherCard/weatherCard.svelte';
+	import WeatherCard from '../lib/weatherCard/weatherCard.svelte';
 
 	// Get data from +page.server.js
 	export let data;
