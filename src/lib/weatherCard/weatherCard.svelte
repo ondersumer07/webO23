@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+
 	// Set default variables
 	export let currentCity = 'Ankara';
 	export let weatherState = 'Sunny';
@@ -7,21 +9,24 @@
 	// Get timezone date and hour / CHANGE TIMEZONE WHEN CHANGING CITIES
 	let currentDate = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/' + currentCity });
 	let currentHour = Number(currentDate.split(' ')[1].slice(0, 2));
+	let currentDayofYear = currentDate.split(' ')[0];
+	let currentTime = currentDate.split(' ')[1].slice(0, 5);
 
-	// Get current time on load, might add refresh feature
-	function momentTime() {
-		let currentDayofYear = currentDate.split(' ')[0];
-		let currentTime = currentDate.split(' ')[1].slice(0, 5);
-		return [currentTime, currentDayofYear];
-	}
+	onMount(async () => {
+		const interval = setInterval(() => {
+			currentDate = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/' + currentCity });
+			currentTime = currentDate.split(' ')[1].slice(0, 5);
+			currentDayofYear = currentDate.split(' ')[0];
+		}, 1000);
+	});
 
 	// Create and decide on background URL
-	let backgroundUrl = "bg-[url('/weatherBg/sunny.svg')]";
+	let backgroundUrl = "bg-[url('/weatherBg/sunny-animated.svg')]";
 
 	if (weatherState == 'Clear' && 7 < currentHour && currentHour < 20) {
-		backgroundUrl = "bg-[url('/weatherBg/sunny.svg')]";
+		backgroundUrl = "bg-[url('/weatherBg/sunny-animated.svg')]";
 	} else if (weatherState == 'Clear') {
-		backgroundUrl = "bg-[url('/weatherBg/night.svg')]";
+		backgroundUrl = "bg-[url('/weatherBg/night-animated.svg')]";
 	} else if (
 		(weatherState == 'Clouds' ||
 			weatherState == 'Mist' ||
@@ -35,7 +40,7 @@
 		7 < currentHour &&
 		currentHour < 20
 	) {
-		backgroundUrl = "bg-[url('/weatherBg/cloudy.svg')]";
+		backgroundUrl = "bg-[url('/weatherBg/cloudy-animated.svg')]";
 	} else if (
 		weatherState == 'Clouds' ||
 		weatherState == 'Mist' ||
@@ -47,16 +52,16 @@
 		weatherState == 'Ash' ||
 		weatherState == 'Squal'
 	) {
-		backgroundUrl = "bg-[url('/weatherBg/cloudy-night.svg')]";
+		backgroundUrl = "bg-[url('/weatherBg/cloudy-night-animated.svg')]";
 	} else if (
 		weatherState == 'Rain' ||
 		weatherState == 'Thunderstorm' ||
 		weatherState == 'Tornado' ||
 		weatherState == 'Drizzle'
 	) {
-		backgroundUrl = "bg-[url('/weatherBg/rainy.svg')]";
+		backgroundUrl = "bg-[url('/weatherBg/rainy-animated.svg')]";
 	} else if (weatherState == 'Snow') {
-		backgroundUrl = "bg-[url('/weatherBg/snowy.svg')]";
+		backgroundUrl = "bg-[url('/weatherBg/snowy-animated.svg')]";
 	}
 
 	// Log Background URL
@@ -64,7 +69,7 @@
 </script>
 
 <!-- min-w to visualize properly -->
-<div class="card w-screen rounded-lg md:w-auto md:min-w-[350px]">
+<div class="card w-full rounded-lg md:w-auto md:min-w-[350px]">
 	<header class="card-header p-0">
 		<div class="rounded-lg {backgroundUrl} bg-cover bg-no-repeat px-6 py-4">
 			<div class="flex h-full flex-row justify-between">
@@ -74,8 +79,10 @@
 				</div>
 				<div class="items-between flex flex-col justify-between text-right">
 					<div>
-						<p class="text-sm font-bold text-primary-100 md:text-lg">{momentTime()[0]}</p>
-						<p class="text-sm text-primary-100 md:text-lg">{momentTime()[1]}</p>
+						<p class="text-sm font-bold text-primary-100 md:text-lg">
+							{currentTime}
+						</p>
+						<p class="text-sm text-primary-100 md:text-lg">{currentDayofYear}</p>
 					</div>
 					<p class="text-sm text-primary-100 md:text-lg">{currentCity}</p>
 				</div>
