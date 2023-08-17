@@ -1,1 +1,139 @@
-<p>cv-education</p>
+<script>
+	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+	import ExperienceAccordion from '$lib/experienceAccordion/experienceAccordion.svelte';
+	export let data;
+
+	console.log(data.streamed?.activity);
+</script>
+
+<div class="card mb-5 p-4 text-justify md:mx-36">
+	<p class="text-md">
+		This page is a visual version of my resume. <a
+			class="underline transition-all hover:font-bold"
+			href="/">Download PDF</a
+		>
+		or visit <a class="underline transition-all hover:font-bold" href="/">Europass CV</a> if you'd like.
+	</p>
+</div>
+
+<div class="md:mx-36">
+	<Accordion class="rounded-lg border border-surface-500">
+		<AccordionItem open>
+			<svelte:fragment slot="summary"
+				><h1 class="h2 py-5">Volunteer Experiences</h1></svelte:fragment
+			>
+			<svelte:fragment slot="content">
+				{#await data.streamed?.volunteerExp}
+					<div class="grid animate-pulse grid-cols-3 gap-4 py-5">
+						<div>
+							<div class="placeholder col-span-1 col-start-1 mb-2 w-1/2" />
+							<div class="placeholder col-span-1 col-start-1 w-1/4" />
+						</div>
+						<div class="placeholder col-span-1 col-start-2 w-1/2" />
+						<div class="gap-4">
+							<div class="placeholder col-span-1 col-start-3 mb-2" />
+							<div class="placeholder col-span-1 col-start-3" />
+						</div>
+					</div>
+				{:then volunteerExp}
+					{#each volunteerExp as volunteerExp}
+						<ExperienceAccordion
+							company={volunteerExp.company}
+							date_of_work={volunteerExp.date_of_work}
+							role={volunteerExp.role}
+							description={volunteerExp.description}
+							link={volunteerExp.link}
+						/>
+					{/each}
+				{/await}
+			</svelte:fragment>
+		</AccordionItem>
+
+		<AccordionItem>
+			<svelte:fragment slot="summary"><h1 class="h2 py-5">Work Experiences</h1></svelte:fragment>
+			<svelte:fragment slot="content">
+				{#await data.streamed?.workExp}
+					<div class="grid animate-pulse grid-cols-3 gap-4 py-5">
+						<div>
+							<div class="placeholder col-span-1 col-start-1 mb-2 w-1/2" />
+							<div class="placeholder col-span-1 col-start-1 w-1/4" />
+						</div>
+						<div class="placeholder col-span-1 col-start-2 w-1/2" />
+						<div class="gap-4">
+							<div class="placeholder col-span-1 col-start-3 mb-2" />
+							<div class="placeholder col-span-1 col-start-3" />
+						</div>
+					</div>
+				{:then workExp}
+					{#each workExp as workExp}
+						<ExperienceAccordion
+							company={workExp.company}
+							date_of_work={workExp.date_of_work}
+							role={workExp.role}
+							description={workExp.description}
+							link={workExp.link}
+						/>
+					{/each}
+				{/await}
+			</svelte:fragment>
+		</AccordionItem>
+
+		<AccordionItem>
+			<svelte:fragment slot="summary"><h1 class="h2 py-5">Education</h1></svelte:fragment>
+			<svelte:fragment slot="content">
+				{#await data.streamed?.education}
+					<div class="grid animate-pulse grid-cols-3 gap-4 py-5">
+						<div>
+							<div class="placeholder col-span-1 col-start-1 mb-2 w-1/2" />
+							<div class="placeholder col-span-1 col-start-1 w-1/4" />
+						</div>
+						<div class="placeholder col-span-1 col-start-2 w-1/2" />
+						<div class="gap-4">
+							<div class="placeholder col-span-1 col-start-3 mb-2" />
+							<div class="placeholder col-span-1 col-start-3" />
+						</div>
+					</div>
+				{:then education}
+					{#each education as education}
+						<ExperienceAccordion
+							company={education.company}
+							date_of_work={education.date_of_work}
+							role={education.role}
+							description={education.description}
+							link={education.link}
+						/>
+					{/each}
+				{/await}
+			</svelte:fragment>
+		</AccordionItem>
+
+		<AccordionItem>
+			<svelte:fragment slot="summary"><h1 class="h2 py-5">Activities</h1></svelte:fragment>
+			<svelte:fragment slot="content">
+				{#await data.streamed?.activity}
+					<div class="grid animate-pulse grid-cols-3 gap-4 py-5">
+						<div>
+							<div class="placeholder col-span-1 col-start-1 mb-2 w-1/2" />
+							<div class="placeholder col-span-1 col-start-1 w-1/4" />
+						</div>
+						<div class="placeholder col-span-1 col-start-2 w-1/2" />
+						<div class="gap-4">
+							<div class="placeholder col-span-1 col-start-3 mb-2" />
+							<div class="placeholder col-span-1 col-start-3" />
+						</div>
+					</div>
+				{:then activity}
+					{#each activity as activity}
+						<ExperienceAccordion
+							company={activity.company}
+							date_of_work={activity.date_of_work}
+							role={activity.role}
+							description={activity.description}
+							link={activity.link}
+						/>
+					{/each}
+				{/await}
+			</svelte:fragment>
+		</AccordionItem>
+	</Accordion>
+</div>
