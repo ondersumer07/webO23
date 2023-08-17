@@ -10,9 +10,16 @@
 	<p class="text-md">
 		This page is a visual version of my resume. <a
 			class="underline transition-all hover:font-bold"
-			href="/">Download PDF</a
+			href="/onderSumerCV.pdf"
+			target="_blank"
+			download>Download PDF</a
 		>
-		or visit <a class="underline transition-all hover:font-bold" href="/">Europass CV</a> if you'd like.
+		or visit
+		<a
+			class="underline transition-all hover:font-bold"
+			href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/%C3%B6nder-s%C3%BCmer/477a6af2-42ba-42d7-9c28-074c017b0de4?view=html"
+			target="_blank">Europass CV</a
+		> if you'd like.
 	</p>
 </div>
 
@@ -24,13 +31,15 @@
 			>
 			<svelte:fragment slot="content">
 				{#await data.streamed?.volunteerExp}
-					<div class="grid animate-pulse grid-cols-3 gap-4 py-5">
+					<div
+						class="grid animate-pulse grid-cols-1 grid-rows-3 gap-4 py-5 md:grid-cols-3 md:grid-rows-1"
+					>
 						<div>
 							<div class="placeholder col-span-1 col-start-1 mb-2 w-1/2" />
 							<div class="placeholder col-span-1 col-start-1 w-1/4" />
 						</div>
 						<div class="placeholder col-span-1 col-start-2 w-1/2" />
-						<div class="gap-4">
+						<div>
 							<div class="placeholder col-span-1 col-start-3 mb-2" />
 							<div class="placeholder col-span-1 col-start-3" />
 						</div>

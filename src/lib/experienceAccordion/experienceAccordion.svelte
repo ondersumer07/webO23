@@ -14,7 +14,7 @@
 	<div
 		class="flex flex-row items-center justify-between pb-3 md:col-span-1 md:col-start-1 md:flex-col md:items-start md:justify-normal md:pb-0"
 	>
-		<h3 class="h4 md:h3"><a target="_blank" href={link}>{company}</a></h3>
+		<h3 class="h4 md:h3 md:mr-5"><a target="_blank" href={link}>{company}</a></h3>
 		<p class="text-sm">{date_of_work}</p>
 	</div>
 	<div class="hidden md:col-span-1 md:col-start-2 md:contents">
