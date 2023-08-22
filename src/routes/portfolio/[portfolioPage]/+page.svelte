@@ -43,7 +43,7 @@
 					src={portfolioPage.image5}
 					alt={portfolioPage.image5.length > 0 ? 'Portfolio Image 5' : ''}
 				/>
-				<p class="my-12 text-lg md:mx-36">{portfolioPage.longDescription}</p>
+				<p class="my-12 text-lg md:mx-36">{@html portfolioPage.longDescription}</p>
 			</div>
 		{/if}
 	{/each}

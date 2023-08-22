@@ -65,7 +65,7 @@
 	}
 
 	// Log Background URL
-	console.log(backgroundUrl);
+	// console.log(backgroundUrl);
 </script>
 
 <!-- min-w to visualize properly -->
