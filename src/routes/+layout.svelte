@@ -178,7 +178,8 @@
 					<div class="mb-8 flex flex-col items-center md:mb-0 md:items-start">
 						<a
 							class="h3 mb-2 text-right underline decoration-2 transition-all md:h4 hover:scale-[1.05] active:scale-[0.75] md:mb-0"
-							href="mailto:me@ondersumer.com"><span>Reach out to me!</span></a
+							href="mailto:me@ondersumer.com"
+							target="_blank"><span>Reach out to me!</span></a
 						>
 						<button
 							class="text-md hover:underline md:text-sm"
