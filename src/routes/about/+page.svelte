@@ -34,7 +34,7 @@
 		Nowadays, I still keep designing, I actually never left but I’ve been shifting my focus towards programming
 		and learning new languages to advance in this realm. Actually, this website is a prime example of
 		this situation since it was my first project with SvelteKit. I have a lot to undertake in this industry,
-		and although this is just the beginning, I am ready to undertake the challenges I may face.
+		and although this is just the beginning, I am ready to confront any challenges I may face.
 	</p>
 	<div class="items-end lg:col-span-1 lg:col-start-3 lg:w-auto lg:min-w-[350px]">
 		<div class="pb-5">
