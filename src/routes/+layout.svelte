@@ -92,7 +92,11 @@
 					class="flex w-screen grow items-center justify-between pr-8 md:pl-16 md:pr-24 lg:pl-32 lg:pr-40"
 				>
 					<!-- Hamburger Menu -->
-					<button class="btn btn-sm md:hidden" on:click={drawerOpen}>
+					<button
+						aria-label="Hamburger Menu Button"
+						class="btn btn-sm md:hidden"
+						on:click={drawerOpen}
+					>
 						<span>
 							<svg viewBox="0 0 100 100" class="fill-token h-4 w-4">
 								<rect width="100" height="13" rx="4" />
@@ -115,7 +119,11 @@
 						<!-- Lightswitch Button -->
 						{#if $modeCurrent}
 							<!-- Sun Button -->
-							<button class="btn btn-sm" on:click={darkModeSwitch}>
+							<button
+								aria-label="Lightswitch Sun Button"
+								class="btn btn-sm"
+								on:click={darkModeSwitch}
+							>
 								<svg
 									class="fill-token h-6 w-6 transition hover:scale-[1.15] active:scale-[0.25]"
 									id="sun"
@@ -140,7 +148,11 @@
 							</button>
 						{:else}
 							<!-- Moon Button -->
-							<button class="btn btn-sm" on:click={darkModeSwitch}>
+							<button
+								aria-label="Lightswitch Moon Button"
+								class="btn btn-sm"
+								on:click={darkModeSwitch}
+							>
 								<svg
 									class="fill-token h-6 w-6 transition hover:scale-[1.15] active:scale-[0.25]"
 									id="moon"
@@ -184,7 +196,7 @@
 						<button
 							class="text-md hover:underline md:text-sm"
 							on:click={toastPop}
-							use:clipboard={email}>copy email</button
+							use:clipboard={'me@ondersumer.com'}>copy email</button
 						>
 					</div>
 
@@ -194,7 +206,10 @@
 					<div class="flex flex-col justify-center">
 						<div class="flex flex-col text-center md:text-right">
 							<div class="mb-4 flex flex-row items-center justify-center gap-4">
-								<a href="https://www.linkedin.com/in/ondersumer/" target="_blank"
+								<a
+									href="https://www.linkedin.com/in/ondersumer/"
+									target="_blank"
+									aria-label="LinkedIn Icon"
 									><svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
@@ -207,7 +222,10 @@
 										/></svg
 									></a
 								>
-								<a href="https://www.behance.net/ondersumer07" target="_blank"
+								<a
+									href="https://www.behance.net/ondersumer07"
+									target="_blank"
+									aria-label="Behance Icon"
 									><svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
@@ -219,7 +237,10 @@
 										/></svg
 									></a
 								>
-								<a href="https://www.instagram.com/ondersumer07/" target="_blank"
+								<a
+									href="https://www.instagram.com/ondersumer07/"
+									target="_blank"
+									aria-label="Instagram Icon"
 									><svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
@@ -232,7 +253,7 @@
 										/></svg
 									></a
 								>
-								<a href="https://twitter.com/ondersumer07" target="_blank"
+								<a href="https://twitter.com/ondersumer07" target="_blank" aria-label="Twitter Icon"
 									><svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 30 30"
@@ -244,7 +265,7 @@
 										/></svg
 									></a
 								>
-								<a href="https://github.com/ondersumer07" target="_blank"
+								<a href="https://github.com/ondersumer07" target="_blank" aria-label="Github Icon"
 									><svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"

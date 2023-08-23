@@ -74,8 +74,8 @@
 		<div class="rounded-lg {backgroundUrl} bg-cover bg-no-repeat px-6 py-4">
 			<div class="flex h-full flex-row justify-between">
 				<div class="items-between mr-4 flex grow flex-col justify-between md:mr-8">
-					<h3 class="h4 text-primary-100 md:h3">{weatherState}</h3>
-					<h1 class="h1 text-4xl text-primary-100 md:text-6xl">{degreesCelcius}°</h1>
+					<h2 class="h4 text-primary-100 md:h3">{weatherState}</h2>
+					<h3 class="h1 text-4xl text-primary-100 md:text-6xl">{degreesCelcius}°</h3>
 				</div>
 				<div class="items-between flex flex-col justify-between text-right">
 					<div>
