@@ -1,12 +1,21 @@
 <script>
 	import MusicCard from '$lib/musicCard/musicCard.svelte';
+	import { attr } from 'svelte/internal';
 	export let data;
 
+	let status = 'Last Played';
 	let lastSong = data.songs.recenttracks.track[0];
 	let song = lastSong.name;
 	let artist = lastSong.artist['#text'];
 	let songLink = lastSong.url;
 	let backgroundUrl = lastSong.image[3]['#text'];
+
+	// Decide whether the last song is currently playing or has been played before.
+	if (typeof lastSong['@attr'] != 'undefined') {
+		status = 'Now Playing';
+	} else {
+		status = 'Last Played';
+	}
 </script>
 
 <div class="m-auto grid grid-cols-1 lg:grid-cols-3 xl:w-3/4">
@@ -45,6 +54,6 @@
 			/>
 		</div>
 
-		<MusicCard {song} {artist} {songLink} {backgroundUrl} />
+		<MusicCard {status} {song} {artist} {songLink} {backgroundUrl} />
 	</div>
 </div>
