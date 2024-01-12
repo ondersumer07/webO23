@@ -17,7 +17,7 @@
 		or visit
 		<a
 			class="underline transition-all hover:font-bold"
-			href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/%C3%B6nder-s%C3%BCmer/477a6af2-42ba-42d7-9c28-074c017b0de4?view=html"
+			href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/%C3%B6nder-s%C3%BCmer/fc57b4fe-a0bd-4bcf-90ba-60d6df5654ea?view=html"
 			target="_blank">Europass CV</a
 		> if you'd like.
 	</p>

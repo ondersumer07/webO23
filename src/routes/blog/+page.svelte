@@ -2,7 +2,7 @@
 	import CardWimage from '$lib/cardWimage/cardWimage.svelte';
 	export let data;
 
-	let itemNumber = 2;
+	let itemNumber = 3;
 
 	console.log(data);
 </script>
