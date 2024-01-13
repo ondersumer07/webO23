@@ -53,13 +53,10 @@
 		weatherState == 'Squal'
 	) {
 		backgroundUrl = "bg-[url('/weatherBg/cloudy-night-animated.svg')]";
-	} else if (
-		weatherState == 'Rain' ||
-		weatherState == 'Thunderstorm' ||
-		weatherState == 'Tornado' ||
-		weatherState == 'Drizzle'
-	) {
+	} else if (weatherState == 'Rain' || weatherState == 'Tornado' || weatherState == 'Drizzle') {
 		backgroundUrl = "bg-[url('/weatherBg/rainy-animated.svg')]";
+	} else if (weatherState == 'Thunderstorm') {
+		backgroundUrl = "bg-[url('/weatherBg/thunderstorm-animated.svg')]";
 	} else if (weatherState == 'Snow') {
 		backgroundUrl = "bg-[url('/weatherBg/snowy-animated.svg')]";
 	}
