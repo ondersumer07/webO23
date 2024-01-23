@@ -2,11 +2,29 @@
 import { OPEN_WEATHER_API_KEY } from '$env/static/private';
 
 // City to change when I leave Istanbul
-let currentCity = 'Istanbul';
+let currentCity = 'Kocaeli';
 
 // Main Function
-export const load = async () => {
+// @ts-ignore implicitly has "any" type error
+export const load = async ({ params }) => {
 	try {
+		// fetch the city and timezone from pocketbase
+		// @ts-ignore implicitly has "any" type error
+		const fetchCityTime = async (cityTime) => {
+			const cityTimeRes = await fetch(
+				`https://personal-website.pockethost.io/api/collections/weatherAndTimezone/records?url=${cityTime}`
+			);
+
+			if (!cityTimeRes.ok) {
+				throw new Error(`Failed to fetch city/timezone data. Status: ${cityTimeRes.status}`);
+			}
+
+			const cityTimeData = await cityTimeRes.json();
+			return cityTimeData.items;
+		};
+
+		// fetch weather state
+		// @ts-ignore implicitly has "any" type error
 		const fetchWeather = async () => {
 			const weatherRes = await fetch(
 				// Fetch from API, units=metric
@@ -14,7 +32,7 @@ export const load = async () => {
 			);
 
 			if (!weatherRes.ok) {
-				throw new Error(`Failed to fetch coffee data. Status: ${weatherRes.status}`);
+				throw new Error(`Failed to fetch weather data. Status: ${weatherRes.status}`);
 			}
 
 			const weatherData = await weatherRes.json();
@@ -23,6 +41,8 @@ export const load = async () => {
 
 		return {
 			// No streamed for correct API response
+			// @ts-ignore implicitly has "any" type error
+			cityTime: fetchCityTime(params.cityTime),
 			weather: fetchWeather()
 		};
 	} catch (error) {

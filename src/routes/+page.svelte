@@ -3,10 +3,16 @@
 
 	// Get data from +page.server.js
 	export let data;
-	console.log(data.weather.weather[0].main);
+	console.log(data);
 
 	// Create variables fetched from API
-	let currentCity = data.weather.name;
+	let currentCity = data.cityTime[0].weatherCity;
+
+	if (currentCity != data.weather.name) {
+		currentCity = data.weather.name;
+	}
+
+	let timezoneCity = data.cityTime[0].timezoneCity;
 	let weatherState = data.weather.weather[0].main;
 	let degreesCelcius = Math.round(data.weather.main.temp);
 </script>
@@ -33,7 +39,7 @@
 	</div>
 	<div class="lg:col-span-1 lg:col-start-3 lg:w-auto lg:min-w-[350px]">
 		<!-- Implement said variables to WeatherCard component -->
-		<WeatherCard {currentCity} {weatherState} {degreesCelcius} />
+		<WeatherCard {currentCity} {timezoneCity} {weatherState} {degreesCelcius} />
 		<div class="w-full rounded-lg py-5">
 			<div class="relative opacity-100 transition-all duration-300 hover:opacity-0">
 				<img

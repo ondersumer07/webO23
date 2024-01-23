@@ -3,18 +3,19 @@
 
 	// Set default variables
 	export let currentCity = 'Ankara';
+	export let timezoneCity = 'Europe/Istanbul';
 	export let weatherState = 'Sunny';
 	export let degreesCelcius = 21;
 
 	// Get timezone date and hour / CHANGE TIMEZONE WHEN CHANGING CITIES
-	let currentDate = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/' + currentCity });
+	let currentDate = new Date().toLocaleString('tr-TR', { timeZone: timezoneCity });
 	let currentHour = Number(currentDate.split(' ')[1].slice(0, 2));
 	let currentDayofYear = currentDate.split(' ')[0];
 	let currentTime = currentDate.split(' ')[1].slice(0, 5);
 
 	onMount(async () => {
 		const interval = setInterval(() => {
-			currentDate = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/' + currentCity });
+			currentDate = new Date().toLocaleString('tr-TR', { timeZone: timezoneCity });
 			currentTime = currentDate.split(' ')[1].slice(0, 5);
 			currentDayofYear = currentDate.split(' ')[0];
 		}, 1000);

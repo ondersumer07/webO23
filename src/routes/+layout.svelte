@@ -45,6 +45,7 @@
 
 	// Load Function
 	onMount(async () => {
+		// log user's preffered mode
 		console.log($modeUserPrefers);
 		if ($modeUserPrefers) {
 			setModeCurrent(true);
