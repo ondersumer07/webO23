@@ -1,11 +1,14 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
+	import { popup } from '@skeletonlabs/skeleton';
+	import type { PopupSettings } from '@skeletonlabs/skeleton';
 
 	// Set default variables
 	export let currentCity = 'Ankara';
 	export let timezoneCity = 'Europe/Istanbul';
 	export let weatherState = 'Sunny';
 	export let degreesCelcius = 21;
+	export let mapsURL = '';
 
 	// Get timezone date and hour / CHANGE TIMEZONE WHEN CHANGING CITIES
 	let currentDate = new Date().toLocaleString('tr-TR', { timeZone: timezoneCity });
@@ -62,8 +65,15 @@
 		backgroundUrl = "bg-[url('/weatherBg/snowy-animated.svg')]";
 	}
 
-	// Log Background URL
-	// console.log(backgroundUrl);
+	// Popup settings
+	const popupFeatured: PopupSettings = {
+		// Represents the type of event that opens/closed the popup
+		event: 'click',
+		// Matches the data-popup value on your popup element
+		target: 'popupFeatured',
+		// Defines which side of your trigger the popup will appear
+		placement: 'bottom'
+	};
 </script>
 
 <!-- min-w to visualize properly -->
@@ -82,7 +92,18 @@
 						</p>
 						<p class="text-sm text-primary-100 md:text-lg">{currentDayofYear}</p>
 					</div>
-					<p class="text-sm text-primary-100 md:text-lg">{currentCity}</p>
+					<button use:popup={popupFeatured}>
+						<p class="text-sm text-primary-100 hover:underline md:text-lg">
+							{currentCity}
+						</p>
+					</button>
+					<div class="card z-10 rounded-lg" data-popup="popupFeatured">
+						<img
+							class="border-surface-100-800-token rounded-lg border-2"
+							src={mapsURL}
+							alt="Maps Location"
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

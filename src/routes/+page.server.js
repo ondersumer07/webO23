@@ -1,8 +1,18 @@
 // Import weather API key
 import { OPEN_WEATHER_API_KEY } from '$env/static/private';
+import { MAPS_API_KEY } from '$env/static/private';
 
 // City to change when I leave Istanbul
 let currentCity = 'Kocaeli';
+
+// Create mapsURL
+let mapsURL =
+	'https://maps.googleapis.com/maps/api/staticmap?center=' +
+	currentCity +
+	'&zoom=3&size=400x200&markers=color:red|label:O|' +
+	currentCity +
+	'&key=' +
+	MAPS_API_KEY;
 
 // Main Function
 // @ts-ignore implicitly has "any" type error
@@ -43,7 +53,8 @@ export const load = async ({ params }) => {
 			// No streamed for correct API response
 			// @ts-ignore implicitly has "any" type error
 			cityTime: fetchCityTime(params.cityTime),
-			weather: fetchWeather()
+			weather: fetchWeather(),
+			mapsURL
 		};
 	} catch (error) {
 		// Handle the error here

@@ -25,6 +25,11 @@
 	} from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
 
+	// popup installation
+	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+	import { storePopup } from '@skeletonlabs/skeleton';
+	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
+
 	// Email Constant
 	const email = 'me@ondersumer.com';
 
@@ -45,8 +50,7 @@
 
 	// Load Function
 	onMount(async () => {
-		// log user's preffered mode
-		console.log($modeUserPrefers);
+		// darkModeSwitch when loaded so it remembers theme choice
 		if ($modeUserPrefers) {
 			setModeCurrent(true);
 		} else {

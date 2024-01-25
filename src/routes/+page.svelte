@@ -1,9 +1,8 @@
-<script>
+<script lang="ts">
 	import WeatherCard from '../lib/weatherCard/weatherCard.svelte';
 
 	// Get data from +page.server.js
 	export let data;
-	console.log(data);
 
 	// Create variables fetched from API
 	let currentCity = data.cityTime[0].weatherCity;
@@ -15,6 +14,9 @@
 	let timezoneCity = data.cityTime[0].timezoneCity;
 	let weatherState = data.weather.weather[0].main;
 	let degreesCelcius = Math.round(data.weather.main.temp);
+
+	// Get mapsURL
+	let mapsURL = data.mapsURL;
 </script>
 
 <div class="mx-auto grid h-full grid-cols-1 items-center justify-center lg:grid-cols-3 xl:w-3/4">
@@ -39,7 +41,7 @@
 	</div>
 	<div class="lg:col-span-1 lg:col-start-3 lg:w-auto lg:min-w-[350px]">
 		<!-- Implement said variables to WeatherCard component -->
-		<WeatherCard {currentCity} {timezoneCity} {weatherState} {degreesCelcius} />
+		<WeatherCard {currentCity} {timezoneCity} {weatherState} {degreesCelcius} {mapsURL} />
 		<div class="w-full rounded-lg py-5">
 			<div class="relative opacity-100 transition-all duration-300 hover:opacity-0">
 				<img
