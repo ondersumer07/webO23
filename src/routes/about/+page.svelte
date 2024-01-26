@@ -1,21 +1,6 @@
 <script>
 	import MusicCard from '$lib/musicCard/musicCard.svelte';
-	import { attr } from 'svelte/internal';
 	export let data;
-
-	let status = 'Last Played';
-	let lastSong = data.songs.recenttracks.track[0];
-	let song = lastSong.name;
-	let artist = lastSong.artist['#text'];
-	let songLink = lastSong.url;
-	let backgroundUrl = lastSong.image[3]['#text'];
-
-	// Decide whether the last song is currently playing or has been played before.
-	if (typeof lastSong['@attr'] != 'undefined') {
-		status = 'Now Playing';
-	} else {
-		status = 'Last Played';
-	}
 </script>
 
 <div class="m-auto grid grid-cols-1 lg:grid-cols-3 xl:w-3/4">
@@ -54,6 +39,39 @@
 			/>
 		</div>
 
-		<MusicCard {status} {song} {artist} {songLink} {backgroundUrl} />
+		<!-- await data and replace with placeholder while -->
+		{#await Promise.all([data.streamed?.songs])}
+			<div class="card h-[106px] w-full animate-pulse rounded-lg md:w-auto">
+				<div class="px-6 py-4">
+					<div class="flex flex-row items-baseline justify-between">
+						<div class="placeholder mb-4 h-[24px] w-1/2 rounded-lg p-0 md:h-[32px]" />
+						<div class="placeholder mb-4 h-[16px] w-1/4 rounded-lg p-0 md:h-[24px]" />
+					</div>
+					<div class="flex flex-row items-baseline justify-between">
+						<div class="placeholder h-[16px] w-1/2 rounded-lg p-0 md:h-[24px]" />
+						<div class="placeholder h-[16px] w-1/4 rounded-lg p-0 md:h-[24px]" />
+					</div>
+				</div>
+			</div>
+		{:then songs}
+			<!-- check if the song is currently playing or was last played -->
+			{#if typeof songs[0].recenttracks.track[0]['@attr'] == 'undefined'}
+				<MusicCard
+					status={'Last Played'}
+					song={songs[0].recenttracks.track[0].name}
+					artist={songs[0].recenttracks.track[0].artist['#text']}
+					songLink={songs[0].recenttracks.track[0].url}
+					backgroundUrl={songs[0].recenttracks.track[0].image[3]['#text']}
+				/>
+			{:else}
+				<MusicCard
+					status={'Now Playing'}
+					song={songs[0].recenttracks.track[0].name}
+					artist={songs[0].recenttracks.track[0].artist['#text']}
+					songLink={songs[0].recenttracks.track[0].url}
+					backgroundUrl={songs[0].recenttracks.track[0].image[3]['#text']}
+				/>
+			{/if}
+		{/await}
 	</div>
 </div>

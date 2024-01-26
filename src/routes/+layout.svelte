@@ -26,7 +26,15 @@
 	import { onMount } from 'svelte';
 
 	// popup installation
-	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+	import {
+		computePosition,
+		autoUpdate,
+		offset,
+		shift,
+		flip,
+		arrow,
+		inline
+	} from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 

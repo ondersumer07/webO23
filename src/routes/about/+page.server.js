@@ -18,8 +18,9 @@ export const load = async () => {
 		};
 
 		return {
-			// No streamed for correct API response
-			songs: fetchSongs()
+			streamed: {
+				songs: fetchSongs()
+			}
 		};
 	} catch (error) {
 		// Handle the error here

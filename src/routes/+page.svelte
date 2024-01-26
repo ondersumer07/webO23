@@ -1,22 +1,8 @@
 <script lang="ts">
-	import WeatherCard from '../lib/weatherCard/weatherCard.svelte';
+	import WeatherCard from './../lib/weatherCard/weatherCard.svelte';
 
 	// Get data from +page.server.js
 	export let data;
-
-	// Create variables fetched from API
-	let currentCity = data.cityTime[0].weatherCity;
-
-	if (currentCity != data.weather.name) {
-		currentCity = data.weather.name;
-	}
-
-	let timezoneCity = data.cityTime[0].timezoneCity;
-	let weatherState = data.weather.weather[0].main;
-	let degreesCelcius = Math.round(data.weather.main.temp);
-
-	// Get mapsURL
-	let mapsURL = data.mapsURL;
 </script>
 
 <div class="mx-auto grid h-full grid-cols-1 items-center justify-center lg:grid-cols-3 xl:w-3/4">
@@ -40,8 +26,31 @@
 		</p>
 	</div>
 	<div class="lg:col-span-1 lg:col-start-3 lg:w-auto lg:min-w-[350px]">
-		<!-- Implement said variables to WeatherCard component -->
-		<WeatherCard {currentCity} {timezoneCity} {weatherState} {degreesCelcius} {mapsURL} />
+		<!-- await variables to give to WeatherCard and replace with placeholder while -->
+		{#await Promise.all([data.streamed?.cityTime, data.streamed?.weather, data.streamed?.mapsURL])}
+			<div class="card h-[100px] w-full animate-pulse rounded-lg md:h-[124px] md:w-auto">
+				<div class="px-6 py-4">
+					<div class="flex flex-row justify-between">
+						<div class="placeholder mb-4 h-[16px] w-1/4 rounded-lg p-0 md:h-[24px]" />
+						<div class="placeholder mb-4 h-[16px] w-1/4 rounded-lg p-0 md:h-[24px]" />
+					</div>
+					<div class="flex flex-row items-baseline justify-between">
+						<div class="placeholder h-[36px] w-1/4 rounded-lg p-0 md:h-[52px]" />
+						<div class="placeholder h-[16px] w-1/2 rounded-lg p-0 md:h-[24px]" />
+					</div>
+				</div>
+			</div>
+			<!-- give variables to the actual WeatherCard -->
+		{:then [cityTime, weather, mapsURL]}
+			<WeatherCard
+				currentCity={weather.name}
+				timezoneCity={cityTime.timezoneCity}
+				weatherState={weather.weather[0].main}
+				degreesCelcius={Math.round(weather.main.temp)}
+				{mapsURL}
+			/>
+		{/await}
+
 		<div class="w-full rounded-lg py-5">
 			<div class="relative opacity-100 transition-all duration-300 hover:opacity-0">
 				<img

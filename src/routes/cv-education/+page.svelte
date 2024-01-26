@@ -2,8 +2,6 @@
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	import ExperienceAccordion from '$lib/experienceAccordion/experienceAccordion.svelte';
 	export let data;
-
-	console.log(data.streamed?.activity);
 </script>
 
 <div class="card m-auto mb-5 p-4 text-justify md:w-3/4">

@@ -50,11 +50,13 @@ export const load = async ({ params }) => {
 		};
 
 		return {
-			// No streamed for correct API response
+			// Stream data to migrate to SvelteKit 2.x as well as make the website load faster
 			// @ts-ignore implicitly has "any" type error
-			cityTime: fetchCityTime(params.cityTime),
-			weather: fetchWeather(),
-			mapsURL
+			streamed: {
+				cityTime: fetchCityTime(params.cityTime),
+				weather: fetchWeather(),
+				mapsURL
+			}
 		};
 	} catch (error) {
 		// Handle the error here
