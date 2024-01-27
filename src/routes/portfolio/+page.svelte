@@ -3,15 +3,13 @@
 	export let data;
 
 	let itemNumber = 7;
-
-	console.log(data);
 </script>
 
 <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
 	{#await data.streamed?.portfolio}
 		{#each { length: itemNumber } as _, i}
 			<div class="card card-hover grid animate-pulse gap-4 rounded-lg p-0">
-				<div class="card-header placeholder h-[250px] w-full rounded-t-lg p-0" />
+				<div class="placeholder card-header h-[250px] w-full rounded-t-lg p-0" />
 				<div class="p-4">
 					<div class="placeholder mb-4" />
 					<div class="placeholder" />

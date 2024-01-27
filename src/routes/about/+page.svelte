@@ -1,5 +1,6 @@
 <script>
 	import MusicCard from '$lib/musicCard/musicCard.svelte';
+	import aboutImage from './../../aboutImage/aboutImage.png?enhanced';
 	export let data;
 </script>
 
@@ -30,12 +31,13 @@
 		this situation since it was my first project with SvelteKit. I have a lot to undertake in this industry,
 		and although this is just the beginning, I am ready to confront any challenges I may face.
 	</p>
+
 	<div class="items-end lg:col-span-1 lg:col-start-3 lg:w-auto lg:min-w-[350px]">
 		<div class="pb-5">
-			<img
+			<enhanced:img
 				class="rounded-lg md:w-auto md:min-w-[350px]"
-				src="/aboutImage/aboutImage.jpg"
-				alt="Önder Sümer"
+				src={aboutImage}
+				alt="Önder Sümer and a scenery behind"
 			/>
 		</div>
 

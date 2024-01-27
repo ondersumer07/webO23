@@ -1,5 +1,7 @@
 <script lang="ts">
 	import WeatherCard from './../lib/weatherCard/weatherCard.svelte';
+	import homepageColor from './../homepagePhotos/homepagePhotoBGColor.png?enhanced';
+	import homepageBW from './../homepagePhotos/homepagePhotoBGBW.png?enhanced';
 
 	// Get data from +page.server.js
 	export let data;
@@ -53,13 +55,13 @@
 
 		<div class="w-full rounded-lg py-5">
 			<div class="relative opacity-100 transition-all duration-300 hover:opacity-0">
-				<img
+				<enhanced:img
 					class="absolute rounded-lg"
-					src="/homepagePhotos/homepagePhotoBGBW.jpg"
-					alt="Homepage Me Black and White"
+					src={homepageBW}
+					alt="Homepage Önder Sümer Black and White"
 				/>
 			</div>
-			<img class="rounded-lg" src="/homepagePhotos/homepagePhotoBGColor.jpg" alt="Homepage Me" />
+			<enhanced:img class="rounded-lg" src={homepageColor} alt="Homepage Önder Sümer Color" />
 		</div>
 	</div>
 </div>
