@@ -2,8 +2,6 @@
 	import { page } from '$app/stores';
 	export let data;
 
-	console.log(data);
-
 	// 0 = English, 1 = Turkish
 	let lang = 0;
 	function langSwitch() {

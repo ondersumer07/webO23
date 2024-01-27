@@ -1,8 +1,4 @@
 <script>
-	// The ordering of these imports is critical to your app working properly
-	import '@skeletonlabs/skeleton/themes/theme-vintage.css';
-	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
-	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
 	// General Imports from Skeleton
@@ -10,11 +6,10 @@
 		AppShell,
 		AppBar,
 		Drawer,
-		drawerStore,
 		clipboard,
 		Toast,
-		toastStore
 	} from '@skeletonlabs/skeleton';
+
 	import Navigation from '$lib/navigation/Navigation.svelte';
 	// Imports for dark/light mode switch
 	import {
@@ -37,6 +32,14 @@
 	} from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
+
+	// Skeleton V2.x toast and drawers store update requirement
+	import { initializeStores } from '@skeletonlabs/skeleton';
+	initializeStores();
+	import { getDrawerStore } from '@skeletonlabs/skeleton';
+	import { getToastStore } from '@skeletonlabs/skeleton';
+	const drawerStore = getDrawerStore();
+	const toastStore = getToastStore();
 
 	// Email Constant
 	const email = 'me@ondersumer.com';

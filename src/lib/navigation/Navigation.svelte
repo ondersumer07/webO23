@@ -1,6 +1,8 @@
 <script>
-	import { drawerStore } from '@skeletonlabs/skeleton';
+	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
+
+	const drawerStore = getDrawerStore();
 
 	function drawerClose() {
 		drawerStore.close();
@@ -23,6 +25,14 @@
 					/></svg
 				>
 			</button>
+		</li>
+		<li class="m-1 md:hidden">
+			<a
+				class={$page.url.pathname == '/' ? 'font-bold underline decoration-2' : ''}
+				on:click={drawerClose}
+				href="/"
+				rel="noreferrer">Home</a
+			>
 		</li>
 		<li class="m-1">
 			<a
