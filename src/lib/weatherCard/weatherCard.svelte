@@ -92,7 +92,7 @@
 						</p>
 						<p class="text-sm text-primary-100 md:text-lg">{currentDayofYear}</p>
 					</div>
-					<button use:popup={popupFeatured}>
+					<button class="text-right" use:popup={popupFeatured}>
 						<p class="text-sm text-primary-100 hover:underline md:text-lg">
 							{currentCity}
 						</p>
