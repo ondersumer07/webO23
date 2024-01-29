@@ -3,7 +3,7 @@ import { OPEN_WEATHER_API_KEY } from '$env/static/private';
 import { MAPS_API_KEY } from '$env/static/private';
 
 // City to change when I leave Istanbul
-let currentCity = 'Kocaeli';
+let currentCity = 'Istanbul';
 
 // Create mapsURL
 let mapsURL =
@@ -51,8 +51,8 @@ export const load = async ({ params }) => {
 
 		return {
 			// Stream data to migrate to SvelteKit 2.x as well as make the website load faster
-			// @ts-ignore implicitly has "any" type error
 			streamed: {
+				// @ts-ignore implicitly has "any" type error
 				cityTime: fetchCityTime(params.cityTime),
 				weather: fetchWeather(),
 				mapsURL
