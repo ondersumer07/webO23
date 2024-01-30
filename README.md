@@ -80,7 +80,7 @@ The night situations change after Istanbul's time passes 8 p.m. The city which t
 ```bash
   /source/routes/+page.server.js
 ```
-You can change the `currentCity` variable in the JS file to alter the city. Timezone changes can be made in the `weatherCard.svelte` component itself by changin `timezoneCity`. Variables are also exported, so you can import values onto them whenever utilizing it.
+You can change the `currentCity` variable in the JS file to alter the city. Timezone changes can be made in the `weatherCard.svelte` component itself by changing `timezoneCity`. Variables are also exported, so you can import values onto them whenever utilizing it.
 
 Maps Static API also uses the same `currentCity` variable, so you don't have to enter the same city name twice. Once you're set, you're set for good!
 
