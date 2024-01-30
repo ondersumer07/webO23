@@ -109,7 +109,7 @@ To run this project, you will need to add the following environment variables to
 - Develop a timezone converter from scratch
 
 - Add a quirky "Poem of the Day" page
-- 
+  
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
