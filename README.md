@@ -6,6 +6,11 @@ Personal website to showcase current work and future endeavors.
 
 [View live](https://ondersumer.com/) . [Report bug](https://github.com/ondersumer07/webO23/issues)
 
+## CURRENTLY WORKING ON
+- Poem of the day page
+- Quirks tab
+- Copying link and text functions for PotD
+
 ## About the project
 
 ![Project homepage](https://raw.githubusercontent.com/ondersumer07/webO23/master/static/githubReadme/homepageScreenshot.png)
