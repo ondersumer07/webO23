@@ -43,7 +43,7 @@
 
 	// Toast
 	const CopiedMes = {
-		message: 'Copied to clipboard',
+		message: 'Email copied to clipboard',
 		background: 'variant-filled-surface',
 		timeout: 1500
 	};

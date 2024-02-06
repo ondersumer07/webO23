@@ -4,11 +4,16 @@ let randomPoemNum = Math.floor(Math.random() * poemCount);
 
 import schedule from 'node-schedule';
 
+// create a recent poems
+let poemIDs = [0];
+
 // disabled error message because it's a cron job, it doesn't need a call.
 // eslint-disable-next-line no-unused-vars
 const job = schedule.scheduleJob('0 0 * * *', function () {
 	randomPoemNum = Math.floor(Math.random() * poemCount);
-	console.log('This runs every 30 seconds ' + randomPoemNum);
+	poemIDs.push(randomPoemNum);
+	console.log('This runs at 00.00 every day ' + randomPoemNum);
+	console.log(poemIDs);
 });
 
 export const load = async () => {
@@ -29,7 +34,9 @@ export const load = async () => {
 		return {
 			streamed: {
 				poems: fetchPoems(),
-				randomPoemNum
+				randomPoemNum,
+				poemIDs,
+				poemCount
 			}
 		};
 	} catch (error) {
