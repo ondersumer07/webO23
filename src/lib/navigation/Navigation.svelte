@@ -1,7 +1,22 @@
-<script>
+<script lang="ts">
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
 
+	// Can't use popups for mobile, going to use accordions
+	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+
+	//Popup install
+	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+	import { popup, storePopup, type PopupSettings } from '@skeletonlabs/skeleton';
+	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
+
+	const popupClick: PopupSettings = {
+		placement: 'bottom',
+		event: 'click',
+		target: 'popupClick'
+	};
+
+	// drawerStore set
 	const drawerStore = getDrawerStore();
 
 	function drawerClose() {
@@ -66,6 +81,55 @@
 				class={$page.url.pathname.includes('/blog') ? 'font-bold underline decoration-2' : ''}
 				>Blog</a
 			>
+		</li>
+		<li class="m-1 hidden md:block">
+			<button
+				aria-label="Quirks button for desktop"
+				class="transition active:scale-[0.95] {$page.url.pathname.includes('/poem-of-the-day')
+					? 'font-bold underline decoration-2'
+					: ''}"
+				use:popup={popupClick}
+				>Quirks<svg class="fill-token -mr-1 h-5 w-5" viewBox="0 0 20 20" aria-hidden="true">
+					<path
+						fill-rule="evenodd"
+						d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+						clip-rule="evenodd"
+					/>
+				</svg></button
+			>
+			<div class="card p-2" data-popup="popupClick">
+				<a
+					href="/poem-of-the-day"
+					on:click={drawerClose}
+					class={$page.url.pathname.includes('/poem-of-the-day')
+						? 'font-bold underline decoration-2'
+						: ''}>Poem of the day</a
+				>
+			</div>
+		</li>
+		<li class="m-1 md:hidden">
+			<Accordion>
+				<AccordionItem>
+					<svelte:fragment slot="summary"
+						><p
+							class="transition active:scale-[0.95] {$page.url.pathname.includes('/poem-of-the-day')
+								? 'font-bold underline decoration-2'
+								: ''}"
+						>
+							Quirks
+						</p></svelte:fragment
+					>
+					<svelte:fragment slot="content"
+						><a
+							href="/poem-of-the-day"
+							on:click={drawerClose}
+							class={$page.url.pathname.includes('/poem-of-the-day')
+								? 'font-bold underline decoration-2'
+								: ''}>Poem of the day</a
+						></svelte:fragment
+					>
+				</AccordionItem>
+			</Accordion>
 		</li>
 	</ul>
 </nav>
