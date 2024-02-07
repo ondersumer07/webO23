@@ -4,7 +4,7 @@
 
 Personal website to showcase current work and future endeavors.
 
-[View dev-build]([https://ondersumer.com/](https://dev-build-ondersumer.netlify.app)) . [Report bug](https://github.com/ondersumer07/webO23/issues)
+[View live (dev-build)](https://dev-build-ondersumer.netlify.app) . [Report bug](https://github.com/ondersumer07/webO23/issues)
 
 ## CURRENTLY WORKING ON
 - Poem of the day page
