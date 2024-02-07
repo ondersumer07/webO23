@@ -9,7 +9,7 @@ let poemIDs = [0];
 
 // disabled error message because it's a cron job, it doesn't need a call.
 // eslint-disable-next-line no-unused-vars
-const job = schedule.scheduleJob('*/30 * * * * *', function () {
+const job = schedule.scheduleJob('0 * * * *', function () {
 	randomPoemNum = Math.floor(Math.random() * poemCount);
 	poemIDs.push(randomPoemNum);
 	console.log('This runs at 00.00 every day ' + randomPoemNum);
