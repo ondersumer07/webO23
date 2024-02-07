@@ -1,6 +1,7 @@
 <script>
 	import { clipboard } from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 
 	// Import necessary toast elements
 	import { initializeStores } from '@skeletonlabs/skeleton';
@@ -35,10 +36,10 @@
 	// @ts-ignore
 	function sharePoem(poemNum) {
 		var currentURL = $page.url.href;
-		if (currentURL.includes('?')) {
+		if (currentURL.includes('?') && !isNaN(Number(currentURL.split('?')[1]))) {
 			return currentURL;
 		} else {
-			let shareURL = currentURL + '?' + poemNum;
+			let shareURL = currentURL.split('?')[0] + '?' + poemNum;
 			return shareURL;
 		}
 	}
@@ -51,8 +52,7 @@
 	}
 
 	// copy poem function. object literals are needed for line break between title and poem.
-	// @ts-ignore
-	function copyPoem(title, poem) {
+	function copyPoem(title = String, poem = String) {
 		let copiedPoem =
 			`` +
 			title +
@@ -99,7 +99,19 @@
 		</div>
 	{:then [poems, randomPoemNum, poemCount]}
 		{#if randomPoemNum != undefined}
-			{#if checkIfShared()[1] != undefined && Number(checkIfShared()[1]) != poemCount && !(Number(checkIfShared()[1]) > Number(poemCount))}
+			<!-- Check if the URL is correct -->
+			{#if checkIfShared()[1] != undefined && (isNaN(Number(checkIfShared()[1])) || Number(checkIfShared()[1]) == poemCount || Number(checkIfShared()[1]) > Number(poemCount))}
+				<p class="mb-4">
+					This is a corrupt URL. Automatically showing <a
+						class="underline transition-all hover:font-bold"
+						href="/poem-of-the-day"
+						target="_self">Poem of the day.</a
+					>
+				</p>
+			{/if}
+
+			<!-- If it's a valid number, check if it's a shared link -->
+			{#if checkIfShared()[1] != undefined && !isNaN(Number(checkIfShared()[1])) && Number(checkIfShared()[1]) != poemCount && !(Number(checkIfShared()[1]) > Number(poemCount))}
 				<h4 class="h4 mb-1 underline decoration-2 transition-all hover:font-black">
 					{poems[checkIfShared()[1]].title}
 				</h4>
@@ -157,6 +169,8 @@
 						>copy poem</button
 					>
 				</div>
+
+				<!-- Else, load the default poem of the day page -->
 			{:else}
 				<div class="mb-1 flex flex-col md:flex-row md:items-center">
 					{#if poems[randomPoemNum].title == ''}
