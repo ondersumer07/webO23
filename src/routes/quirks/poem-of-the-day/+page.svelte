@@ -104,7 +104,7 @@
 				<p class="mb-4">
 					This is a corrupt URL. Automatically showing <a
 						class="underline transition-all hover:font-bold"
-						href="/poem-of-the-day"
+						href="/quirks/poem-of-the-day"
 						target="_self">Poem of the day.</a
 					>
 				</p>

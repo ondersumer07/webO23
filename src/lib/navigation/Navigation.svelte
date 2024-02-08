@@ -85,7 +85,7 @@
 		<li class="m-1 hidden md:block">
 			<button
 				aria-label="Quirks button for desktop"
-				class="transition active:scale-[0.95] {$page.url.pathname.includes('/poem-of-the-day')
+				class="transition active:scale-[0.95] {$page.url.pathname.includes('/quirks')
 					? 'font-bold underline decoration-2'
 					: ''}"
 				use:popup={popupClick}
@@ -99,7 +99,7 @@
 			>
 			<div class="card p-2" data-popup="popupClick">
 				<a
-					href="/poem-of-the-day"
+					href="/quirks/poem-of-the-day"
 					on:click={drawerClose}
 					class={$page.url.pathname.includes('/poem-of-the-day')
 						? 'font-bold underline decoration-2'
@@ -112,7 +112,7 @@
 				<AccordionItem>
 					<svelte:fragment slot="summary"
 						><p
-							class="transition active:scale-[0.95] {$page.url.pathname.includes('/poem-of-the-day')
+							class="transition active:scale-[0.95] {$page.url.pathname.includes('/quirks')
 								? 'font-bold underline decoration-2'
 								: ''}"
 						>
@@ -121,7 +121,7 @@
 					>
 					<svelte:fragment slot="content"
 						><a
-							href="/poem-of-the-day"
+							href="/quirks/poem-of-the-day"
 							on:click={drawerClose}
 							class={$page.url.pathname.includes('/poem-of-the-day')
 								? 'font-bold underline decoration-2'
