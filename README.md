@@ -125,6 +125,8 @@ To run this project, you will need to add the following environment variables to
 
 ## Roadmap
 
+- Customize blog cards to include tags
+  
 - Create specific project pages for weatherCard and musicCard
 
 - Implement "What's Next" for Quirks tab
