@@ -6,11 +6,6 @@ Personal website to showcase current work and future endeavors.
 
 [View live (dev-build)](https://dev-build-ondersumer.netlify.app) . [Report bug](https://github.com/ondersumer07/webO23/issues)
 
-## CURRENTLY WORKING ON
-- Poem of the day page
-- Quirks tab
-- Copying link and text functions for PotD
-
 ## About the project
 
 ![Project homepage](https://raw.githubusercontent.com/ondersumer07/webO23/master/static/githubReadme/homepageScreenshot.png)
@@ -30,6 +25,7 @@ I hope you had as much fun visiting my website as I did while I was building it.
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Skeleton](https://www.skeleton.dev/)
 - [Floating UI](https://floating-ui.com/) (with Skeleton)
+- APIs mentioned in features.
 
 ## Getting started
 
@@ -97,6 +93,26 @@ I developed musicCard using [Last.fm API](https://www.last.fm/api). All the prop
 
 There are 2 states to this component: "Now Playing" and "Last Played". Only "Now Playing" has an animated icon, and "Last Played" has a static one.
 
+### poem-of-the-day
+
+![potdDemo1](https://raw.githubusercontent.com/ondersumer07/webO23/master/static/githubReadme/potdDemo1.png)
+
+Poem of the day is a universal page across all networks and devices to show a randomly selected poem from a custom database of poems. To get the data, I needed a number that comes from cloud.
+
+Developing a background job while using serverless hosts is no easy task. Handling this issue, I created a custom Python API that runs 24/7 using [python anywhere](https://www.pythonanywhere.com). After finishing the RESTLESS API, I used [cron-job](https://cron-job.org/en/) to update the data every 24 hours. This way, I was able to successfully update my API within my desired time interval. Currently, you can access the public API data by visiting the link: 
+
+```bash
+  http://ondersumer07.pythonanywhere.com/randomNumAPI
+```
+
+I plan to create a service on this later on.
+
+![potdDemo2](https://raw.githubusercontent.com/ondersumer07/webO23/master/static/githubReadme/potdDemo2.png)
+
+Also, you can share the poems you see with your friends either via sending them a link which looks something similar to this `https://ondersumer.com/quirks/poem-of-the-day?1`. The number after `?` indicates the id of the requested poem. Another way is just copying the poem title and the poem itself to your clipboard if you feel more comfortable sharing that way.
+
+As of now, I don't plan on publishing poem-of-the-day as a component since it's a highly customized one that would require a lot of inputs to run properly on other projects. However, I would love to help you set up a similar page for you project if you shoot me an email at me@ondersumer.com!
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
@@ -111,9 +127,11 @@ To run this project, you will need to add the following environment variables to
 
 - Create specific project pages for weatherCard and musicCard
 
-- Develop a timezone converter from scratch
-
-- Add a quirky "Poem of the Day" page
+- Implement "What's Next" for Quirks tab
+  
+- Open "Downloads" tab
+  
+- Publish custom API
   
 ## Contributing
 
