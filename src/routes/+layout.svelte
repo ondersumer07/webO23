@@ -2,13 +2,7 @@
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
 	// General Imports from Skeleton
-	import {
-		AppShell,
-		AppBar,
-		Drawer,
-		clipboard,
-		Toast,
-	} from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, Drawer, clipboard, Toast } from '@skeletonlabs/skeleton';
 
 	import Navigation from '$lib/navigation/Navigation.svelte';
 	// Imports for dark/light mode switch
@@ -49,7 +43,7 @@
 
 	// Toast
 	const CopiedMes = {
-		message: 'Copied to clipboard',
+		message: 'Email copied to clipboard',
 		background: 'variant-filled-surface',
 		timeout: 1500
 	};
