@@ -67,7 +67,7 @@
 <Toast />
 
 <div class="m-auto w-full xl:w-3/4">
-	{#await Promise.all( [data.streamed?.poems, data.streamed?.randomPoemNum, data.streamed?.poemCount] )}
+	{#await Promise.all([data.streamed?.poems, data.streamed?.randomPoemNum])}
 		<div class="animate-pulse rounded-lg">
 			<div class="">
 				<!-- Desktop title loading -->
@@ -97,10 +97,10 @@
 				</div>
 			</div>
 		</div>
-	{:then [poems, randomPoemNum, poemCount]}
-		{#if randomPoemNum != undefined}
+	{:then [poems, randomPoemNum]}
+		{#if randomPoemNum.randomNum != undefined}
 			<!-- Check if the URL is correct -->
-			{#if checkIfShared()[1] != undefined && (isNaN(Number(checkIfShared()[1])) || Number(checkIfShared()[1]) == poemCount || Number(checkIfShared()[1]) > Number(poemCount))}
+			{#if checkIfShared()[1] != undefined && (isNaN(Number(checkIfShared()[1])) || Number(checkIfShared()[1]) == randomPoemNum.poemCount || Number(checkIfShared()[1]) > Number(randomPoemNum.poemCount))}
 				<p class="mb-4">
 					This is a corrupt URL. Automatically showing <a
 						class="underline transition-all hover:font-bold"
@@ -111,7 +111,7 @@
 			{/if}
 
 			<!-- If it's a valid number, check if it's a shared link -->
-			{#if checkIfShared()[1] != undefined && !isNaN(Number(checkIfShared()[1])) && Number(checkIfShared()[1]) != poemCount && !(Number(checkIfShared()[1]) > Number(poemCount))}
+			{#if checkIfShared()[1] != undefined && !isNaN(Number(checkIfShared()[1])) && Number(checkIfShared()[1]) != randomPoemNum.poemCount && !(Number(checkIfShared()[1]) > Number(randomPoemNum.poemCount))}
 				<h4 class="h4 mb-1 underline decoration-2 transition-all hover:font-black">
 					{poems[checkIfShared()[1]].title}
 				</h4>
@@ -173,11 +173,11 @@
 				<!-- Else, load the default poem of the day page -->
 			{:else}
 				<div class="mb-1 flex flex-col md:flex-row md:items-center">
-					{#if poems[randomPoemNum].title == ''}
+					{#if poems[randomPoemNum.randomNum].title == ''}
 						<!-- If the title is empty, no element to put mr-4 and shift POTD text -->
 					{:else}
 						<h4 class="h4 mr-4 underline decoration-2 transition-all hover:font-black">
-							{poems[randomPoemNum].title}
+							{poems[randomPoemNum.randomNum].title}
 						</h4>
 						<!-- Create svg circle to make it available in fill-token -->
 						<svg
@@ -192,13 +192,15 @@
 					<small><i>Poem of the day, {currentDay}</i></small>
 				</div>
 				<pre class="mb-2" style="font-family:Inter, sans-serif; white-space: pre-wrap;">{poems[
-						randomPoemNum
+						randomPoemNum.randomNum
 					].poem}</pre>
-				<p style="line-height:normal"><small>From <i>{poems[randomPoemNum].source}</i></small></p>
+				<p style="line-height:normal">
+					<small>From <i>{poems[randomPoemNum.randomNum].source}</i></small>
+				</p>
 				<div class="mt-6 flex flex-row">
 					<button
 						class="mr-6 flex flex-row items-center underline transition-all hover:scale-[1.05] active:scale-[0.75]"
-						use:clipboard={sharePoem(randomPoemNum)}
+						use:clipboard={sharePoem(randomPoemNum.randomNum)}
 						on:click={toastPopPoem}
 						><svg
 							class="fill-token mr-1 h-4 w-4"
@@ -224,7 +226,10 @@
 					>
 					<button
 						class="flex flex-row items-center underline transition-all hover:scale-[1.05] active:scale-[0.75]"
-						use:clipboard={copyPoem(poems[randomPoemNum].title, poems[randomPoemNum].poem)}
+						use:clipboard={copyPoem(
+							poems[randomPoemNum.randomNum].title,
+							poems[randomPoemNum.randomNum].poem
+						)}
 						on:click={toastPopPoem}
 						><svg
 							class="fill-token h-4 w-4"

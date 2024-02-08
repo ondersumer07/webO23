@@ -1,21 +1,3 @@
-// Assign poem count in database
-let poemCount = 5;
-let randomPoemNum = Math.floor(Math.random() * poemCount);
-
-import schedule from 'node-schedule';
-
-// create a recent poems
-let poemIDs = [0];
-
-// disabled error message because it's a cron job, it doesn't need a call.
-// eslint-disable-next-line no-unused-vars
-const job = schedule.scheduleJob('0 * * * *', function () {
-	randomPoemNum = Math.floor(Math.random() * poemCount);
-	poemIDs.push(randomPoemNum);
-	console.log('This runs at 00.00 every day ' + randomPoemNum);
-	console.log(poemIDs);
-});
-
 export const load = async () => {
 	try {
 		const fetchPoems = async () => {
@@ -31,12 +13,21 @@ export const load = async () => {
 			return poemsData.items;
 		};
 
+		const fetchRandomNum = async () => {
+			const randomNumRes = await fetch(`http://ondersumer07.pythonanywhere.com/randomNumAPI`);
+
+			if (!randomNumRes.ok) {
+				throw new Error(`Failed to fetch random number data. Status: ${randomNumRes.status}`);
+			}
+
+			const randomNumData = await randomNumRes.json();
+			return randomNumData;
+		};
+
 		return {
 			streamed: {
 				poems: fetchPoems(),
-				randomPoemNum,
-				poemIDs,
-				poemCount
+				randomPoemNum: fetchRandomNum()
 			}
 		};
 	} catch (error) {
