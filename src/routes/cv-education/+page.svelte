@@ -4,7 +4,7 @@
 	export let data;
 </script>
 
-<div class="card m-auto mb-5 p-4 text-justify md:w-3/4">
+<div class="card m-auto mb-5 p-4 text-justify xl:w-3/4">
 	<p class="text-md">
 		This page is a visual version of my resume. <a
 			class="underline transition-all hover:font-bold"
@@ -21,7 +21,7 @@
 	</p>
 </div>
 
-<div class="m-auto md:w-3/4">
+<div class="m-auto xl:w-3/4">
 	<Accordion class="rounded-lg border border-surface-500">
 		<AccordionItem open>
 			<svelte:fragment slot="summary"
