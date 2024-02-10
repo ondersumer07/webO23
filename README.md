@@ -127,11 +127,15 @@ To run this project, you will need to add the following environment variables to
 
 - Customize blog cards to include estimate reading times
   
+- Add "Download poem" button with custom image creation
+  
 - Create specific project pages for weatherCard and musicCard
 
-- Implement "What's Next" for Quirks tab
+- Implement "What's Next / What's Quirks" for Quirks tab
   
 - Open "Downloads" tab
+  
+- Create Link Shortener for custom domain
   
 - Publish custom API
   
