@@ -64,7 +64,7 @@ This is a customized version of Skeleton's built-in [lightswitch](https://www.sk
 
 ### weatherCard
 
-![weatherCardDemo](https://raw.githubusercontent.com/ondersumer07/webO23/master/static/githubReadme/weatherCardDemo.png)
+![weatherCardDemo](https://raw.githubusercontent.com/ondersumer07/webO23/master/static/githubReadme/weatherCardDemo.gif)
 
 This is a Svelte component I've created using 2 APIs: OpenWeather's [Weather API](https://openweathermap.org/api) and Google Maps' [Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview). Remember that you will need your own API keys for it to function properly. I will name the environment variables later on.
 
