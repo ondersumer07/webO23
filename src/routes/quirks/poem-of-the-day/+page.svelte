@@ -172,16 +172,16 @@
 
 				<!-- Else, load the default poem of the day page -->
 			{:else}
-				<div class="mb-1 flex flex-col md:flex-row md:items-center">
+				<div class="mb-1 flex flex-col md:flex-row md:items-center md:space-x-4">
 					{#if poems[randomPoemNum.randomNum].title == ''}
 						<!-- If the title is empty, no element to put mr-4 and shift POTD text -->
 					{:else}
-						<h4 class="h4 mr-4 underline decoration-2 transition-all hover:font-black">
+						<h4 class="h4 underline decoration-2 transition-all hover:font-black">
 							{poems[randomPoemNum.randomNum].title}
 						</h4>
 						<!-- Create svg circle to make it available in fill-token -->
 						<svg
-							class="fill-token mr-4 hidden md:block"
+							class="fill-token hidden md:block"
 							height="5"
 							width="5"
 							xmlns="http://www.w3.org/2000/svg"

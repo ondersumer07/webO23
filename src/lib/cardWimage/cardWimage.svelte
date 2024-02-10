@@ -16,5 +16,5 @@
 			{description}
 		</p>
 	</div>
-	<footer class="card-footer"><p>{date}</p></footer>
+	<footer class="card-footer"><p class="opacity-60">{date}</p></footer>
 </a>

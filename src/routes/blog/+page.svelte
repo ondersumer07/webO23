@@ -1,5 +1,5 @@
 <script>
-	import CardWimage from '$lib/cardWimage/cardWimage.svelte';
+	import CardWimageReadTime from '$lib/cardWimageReadTime/cardWimageReadTime.svelte';
 	export let data;
 
 	let itemNumber = 3;
@@ -19,7 +19,7 @@
 		{/each}
 	{:then blogCard}
 		{#each blogCard as blogCard}
-			<CardWimage
+			<CardWimageReadTime
 				image={blogCard.image}
 				description={blogCard.description}
 				title={blogCard.title}
