@@ -33,13 +33,13 @@
 						class="grid animate-pulse grid-cols-1 grid-rows-3 gap-4 py-5 md:grid-cols-3 md:grid-rows-1"
 					>
 						<div>
-							<div class="placeholder col-span-1 col-start-1 mb-2 w-1/2" />
-							<div class="placeholder col-span-1 col-start-1 w-1/4" />
+							<div class="placeholder col-span-1 col-start-1 mb-2 w-1/2 rounded-lg" />
+							<div class="placeholder col-span-1 col-start-1 w-1/4 rounded-lg" />
 						</div>
-						<div class="placeholder col-span-1 col-start-2 w-1/2" />
+						<div class="placeholder col-span-1 col-start-2 w-1/2 rounded-lg" />
 						<div>
-							<div class="placeholder col-span-1 col-start-3 mb-2" />
-							<div class="placeholder col-span-1 col-start-3" />
+							<div class="placeholder col-span-1 col-start-3 mb-2 rounded-lg" />
+							<div class="placeholder col-span-1 col-start-3 rounded-lg" />
 						</div>
 					</div>
 				{:then volunteerExp}

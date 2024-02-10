@@ -77,7 +77,7 @@
 				</div>
 				<!-- Mobile title loading -->
 				<div class="mb-4 flex flex-col md:hidden">
-					<div class="placeholder mb-2 mr-4 h-[24px] w-1/2 rounded-lg p-0" />
+					<div class="placeholder mb-2 h-[24px] w-1/2 rounded-lg p-0" />
 					<div class="placeholder h-[12px] w-1/3 rounded-lg p-0" />
 				</div>
 				<!-- Poem loading -->
@@ -94,6 +94,10 @@
 					<div class="placeholder mb-2 h-[24px] w-1/3 rounded-lg p-0" />
 					<div class="placeholder mb-2 h-[24px] w-1/4 rounded-lg p-0" />
 					<div class="placeholder h-[24px] w-1/4 rounded-lg p-0" />
+				</div>
+				<div class="flex flex-row">
+					<div class="placeholder mr-4 h-[24px] w-1/12 rounded-lg p-0" />
+					<div class="placeholder h-[24px] w-1/12 rounded-lg p-0" />
 				</div>
 			</div>
 		</div>

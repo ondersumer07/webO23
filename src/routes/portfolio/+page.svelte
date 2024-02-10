@@ -11,10 +11,10 @@
 			<div class="card card-hover grid animate-pulse gap-4 rounded-lg p-0">
 				<div class="placeholder card-header h-[250px] w-full rounded-t-lg p-0" />
 				<div class="p-4">
-					<div class="placeholder mb-4" />
-					<div class="placeholder" />
+					<div class="placeholder mb-4 rounded-lg" />
+					<div class="placeholder rounded-lg" />
 				</div>
-				<div class="placeholder m-4 w-1/4" />
+				<div class="placeholder m-4 w-1/4 rounded-lg" />
 			</div>
 		{/each}
 	{:then portfolio}
