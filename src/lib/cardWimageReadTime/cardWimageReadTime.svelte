@@ -39,7 +39,7 @@
 		<div class="flex flex-row items-center space-x-4">
 			<p class="opacity-60">{timeToRead} min read</p>
 			<svg
-				class="fill-token mr-4 hidden opacity-60 md:block"
+				class="fill-token mr-4 opacity-60"
 				height="5"
 				width="5"
 				xmlns="http://www.w3.org/2000/svg"
