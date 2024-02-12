@@ -124,8 +124,6 @@ To run this project, you will need to add the following environment variables to
 `MAPS_API_KEY`
 
 ## Roadmap
-
-- Customize blog cards to include estimate reading times
   
 - Add "Download poem" button with custom image creation
   
@@ -137,7 +135,7 @@ To run this project, you will need to add the following environment variables to
   
 - Create Link Shortener for custom domain
   
-- Publish custom API
+- Add "Developer's Note" blog posts
   
 ## Contributing
 
