@@ -48,7 +48,9 @@
 						{lang == 0 ? blogPage.titleENG : blogPage.titleTR}
 					</h2>
 					<div class="mb-5 text-justify text-lg md:w-3/4">
-						{@html lang == 0 ? blogPage.textENG : blogPage.textTR}
+						{@html lang == 0 ? blogPage.textENG1 : blogPage.textTR1}
+						<CodeBlock lang={blogPage.codeLang} code={blogPage.code}></CodeBlock>
+						{@html lang == 0 ? blogPage.textENG2 : blogPage.textTR2}
 					</div>
 				</div>
 			</div>
