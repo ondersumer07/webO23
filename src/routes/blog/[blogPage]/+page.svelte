@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { CodeBlock } from '@skeletonlabs/skeleton';
 	export let data;
 
 	// 0 = English, 1 = Turkish
@@ -46,9 +47,9 @@
 					<h2 class="h2 pb-8 text-center underline decoration-2 transition-all hover:font-black">
 						{lang == 0 ? blogPage.titleENG : blogPage.titleTR}
 					</h2>
-					<p class="mb-5 text-justify text-lg md:w-3/4">
+					<div class="mb-5 text-justify text-lg md:w-3/4">
 						{@html lang == 0 ? blogPage.textENG : blogPage.textTR}
-					</p>
+					</div>
 				</div>
 			</div>
 		{/if}
