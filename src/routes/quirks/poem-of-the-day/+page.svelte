@@ -1,7 +1,6 @@
 <script>
 	import { clipboard } from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
 
 	// Import necessary toast elements
 	import { initializeStores } from '@skeletonlabs/skeleton';
@@ -22,6 +21,7 @@
 	}
 
 	// Get Data
+	// @ts-ignore
 	export let data;
 
 	// Create a new date object to style
@@ -60,6 +60,28 @@
 ` +
 			poem;
 		return copiedPoem;
+	}
+
+	// @ts-ignore
+	async function downloadPoemOfDay(
+		imageSrc = 'https://raw.githubusercontent.com/ondersumer07/pyImageCrGH/master/todaysPoem.jpg',
+		nameOfDownload = 'todaysPoem.jpg'
+	) {
+		const response = await fetch(imageSrc);
+
+		const blobImage = await response.blob();
+
+		const href = URL.createObjectURL(blobImage);
+
+		const anchorElement = document.createElement('a');
+		anchorElement.href = href;
+		anchorElement.download = nameOfDownload;
+
+		document.body.appendChild(anchorElement);
+		anchorElement.click();
+
+		document.body.removeChild(anchorElement);
+		window.URL.revokeObjectURL(href);
 	}
 </script>
 
@@ -201,9 +223,9 @@
 				<p style="line-height:normal">
 					<small>From <i>{poems[randomPoemNum.randomNum].source}</i></small>
 				</p>
-				<div class="mt-6 flex flex-row">
+				<div class="mt-6 flex flex-row space-x-6">
 					<button
-						class="mr-6 flex flex-row items-center underline transition-all hover:scale-[1.05] active:scale-[0.75]"
+						class="flex flex-row items-center underline transition-all hover:scale-[1.05] active:scale-[0.75]"
 						use:clipboard={sharePoem(randomPoemNum.randomNum)}
 						on:click={toastPopPoem}
 						><svg
@@ -247,6 +269,26 @@
 								d="M1191.62,109.15H628.76a25.38,25.38,0,0,0-25.38,25.39v872.61a25.38,25.38,0,0,0,25.38,25.39h562.86a25.38,25.38,0,0,0,25.38-25.39V134.54A25.38,25.38,0,0,0,1191.62,109.15Z"
 							/></svg
 						>copy poem</button
+					>
+					<button
+						class="flex flex-row items-center underline transition-all hover:scale-[1.15] active:scale-[0.75]"
+						on:click={(e) =>
+							downloadPoemOfDay(
+								'https://raw.githubusercontent.com/ondersumer07/pyImageCrGH/master/todaysPoem.jpg',
+								'todaysPoem' + poems[randomPoemNum.randomNum].title.replaceAll(' ', '')
+							)}
+						><svg
+							class="fill-token mt-0.5 h-4 w-4"
+							id="Layer_5"
+							data-name="Layer 5"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 1500 1500"
+							><path
+								d="M1366.21,1097.73h-94.59a25,25,0,0,0-25,25v104.91a15,15,0,0,1-15,15H268.38a15,15,0,0,1-15-15V1122.73a25,25,0,0,0-25-25H133.79a25,25,0,0,0-25,25v239.82a25,25,0,0,0,25,25H253.38v-.33h993.24v.33h119.59a25,25,0,0,0,25-25V1122.73A25,25,0,0,0,1366.21,1097.73Z"
+							/><path
+								d="M732.36,1105a25,25,0,0,0,35.27,0c75.62-75.26,244.18-244.6,321.74-321.94a25,25,0,0,0,0-35.37l-60.82-60.82a33.85,33.85,0,0,0-47.87,0L822.46,845.13V137.45a25,25,0,0,0-25-25H702.54a25,25,0,0,0-25,25V845.16L513,680.63a25,25,0,0,0-35.35,0l-67.05,67a25,25,0,0,0,0,35.39C488.91,861,656.32,1029.19,732.36,1105Z"
+							/></svg
+						></button
 					>
 				</div>
 			{/if}
