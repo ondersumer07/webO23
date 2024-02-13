@@ -278,7 +278,7 @@
 								'todaysPoem' + poems[randomPoemNum.randomNum].title.replaceAll(' ', '')
 							)}
 						><svg
-							class="fill-token mt-0.5 h-4 w-4"
+							class="fill-token h-4 w-4"
 							id="Layer_5"
 							data-name="Layer 5"
 							xmlns="http://www.w3.org/2000/svg"
