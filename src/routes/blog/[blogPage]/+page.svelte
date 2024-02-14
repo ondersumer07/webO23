@@ -5,20 +5,13 @@
 	import hljs from 'highlight.js/lib/core';
 
 	// Import each language module you require
-	import xml from 'highlight.js/lib/languages/xml'; // for HTML
-	import css from 'highlight.js/lib/languages/css';
-	import json from 'highlight.js/lib/languages/json';
 	import javascript from 'highlight.js/lib/languages/javascript';
-	import typescript from 'highlight.js/lib/languages/typescript';
-	import shell from 'highlight.js/lib/languages/shell';
+	import python from 'highlight.js/lib/languages/python';
 
 	// Register each imported language module
-	hljs.registerLanguage('xml', xml); // for HTML
-	hljs.registerLanguage('css', css);
-	hljs.registerLanguage('json', json);
 	hljs.registerLanguage('javascript', javascript);
-	hljs.registerLanguage('typescript', typescript);
-	hljs.registerLanguage('shell', shell);
+	// @ts-ignore
+	hljs.registerLanguage('python', python);
 
 	import 'highlight.js/styles/github-dark.css';
 	import { storeHighlightJs } from '@skeletonlabs/skeleton';
@@ -73,8 +66,28 @@
 					</h2>
 					<div class="mb-5 text-justify text-lg md:w-3/4">
 						{@html lang == 0 ? blogPage.textENG1 : blogPage.textTR1}
-						<CodeBlock language={blogPage.codeLang} code={blogPage.code}></CodeBlock>
-						{@html lang == 0 ? blogPage.textENG2 : blogPage.textTR2}
+						{#if blogPage.codeLang1 != undefined}
+							<CodeBlock
+								lineNumbers={true}
+								buttonCopied={'Copied🎉'}
+								language={blogPage.codeLang1}
+								code={blogPage.code1}
+							></CodeBlock>
+							{#if blogPage.textENG2 != undefined}
+								{@html lang == 0 ? blogPage.textENG2 : blogPage.textTR2}
+								{#if blogPage.codeLang2 != undefined}
+									<CodeBlock
+										lineNumbers={true}
+										buttonCopied={'Copied🎉'}
+										language={blogPage.codeLang2}
+										code={blogPage.code2}
+									></CodeBlock>
+									{#if blogPage.textENG3 != undefined}
+										{@html lang == 0 ? blogPage.textENG3 : blogPage.textTR3}
+									{/if}
+								{/if}
+							{/if}
+						{/if}
 					</div>
 				</div>
 			</div>
