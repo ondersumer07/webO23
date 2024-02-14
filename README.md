@@ -124,18 +124,14 @@ To run this project, you will need to add the following environment variables to
 `MAPS_API_KEY`
 
 ## Roadmap
-  
-- Add "Download poem" button with custom image creation
-  
+    
 - Create specific project pages for weatherCard and musicCard
 
 - Implement "What's Next / What's Quirks" for Quirks tab
   
 - Open "Downloads" tab
   
-- Create Link Shortener for custom domain
-  
-- Add "Developer's Note" blog posts
+- Create Link Shortener for custom domain (maybe)
   
 ## Contributing
 
