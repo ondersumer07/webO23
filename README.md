@@ -111,6 +111,8 @@ I plan to create a service on this later on.
 
 Also, you can share the poems you see with your friends either via sending them a link which looks something similar to this `https://ondersumer.com/quirks/poem-of-the-day?1`. The number after `?` indicates the id of the requested poem. Another way is just copying the poem title and the poem itself to your clipboard if you feel more comfortable sharing that way.
 
+As a lately added feature, you can also download the poem as an image to your device. This works with Python and its [Pillow library](https://pillow.readthedocs.io/en/stable/), you can access the [Github page](https://github.com/ondersumer07/pyImageCrGH) to see how you can get a similar result.
+
 As of now, I don't plan on publishing poem-of-the-day as a component since it's a highly customized one that would require a lot of inputs to run properly on other projects. However, I would love to help you set up a similar page for you project if you shoot me an email at me@ondersumer.com!
 
 ## Environment Variables
