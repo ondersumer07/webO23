@@ -66,27 +66,27 @@
 					</h2>
 					<div class="mb-5 text-justify text-lg md:w-3/4">
 						{@html lang == 0 ? blogPage.textENG1 : blogPage.textTR1}
-						{#if blogPage.codeLang1 != undefined}
+						{#if blogPage.codeLang1}
 							<CodeBlock
 								lineNumbers={true}
 								buttonCopied={'Copied🎉'}
 								language={blogPage.codeLang1}
 								code={blogPage.code1}
 							></CodeBlock>
-							{#if blogPage.textENG2 != undefined}
-								{@html lang == 0 ? blogPage.textENG2 : blogPage.textTR2}
-								{#if blogPage.codeLang2 != undefined}
-									<CodeBlock
-										lineNumbers={true}
-										buttonCopied={'Copied🎉'}
-										language={blogPage.codeLang2}
-										code={blogPage.code2}
-									></CodeBlock>
-									{#if blogPage.textENG3 != undefined}
-										{@html lang == 0 ? blogPage.textENG3 : blogPage.textTR3}
-									{/if}
-								{/if}
-							{/if}
+						{/if}
+						{#if blogPage.textENG2}
+							{@html lang == 0 ? blogPage.textENG2 : blogPage.textTR2}
+						{/if}
+						{#if blogPage.codeLang2}
+							<CodeBlock
+								lineNumbers={true}
+								buttonCopied={'Copied🎉'}
+								language={blogPage.codeLang2}
+								code={blogPage.code2}
+							></CodeBlock>
+						{/if}
+						{#if blogPage.textENG3}
+							{@html lang == 0 ? blogPage.textENG3 : blogPage.textTR3}
 						{/if}
 					</div>
 				</div>
