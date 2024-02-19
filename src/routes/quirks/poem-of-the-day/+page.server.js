@@ -2,7 +2,7 @@ export const load = async () => {
 	try {
 		const fetchPoems = async () => {
 			const poemsRes = await fetch(
-				`https://personal-website.pockethost.io/api/collections/poems/records?perPage=67` // change perPage as poem number increases
+				`https://personal-website.pockethost.io/api/collections/poems/records?perPage=101` // change perPage as poem number increases
 			);
 
 			if (!poemsRes.ok) {
