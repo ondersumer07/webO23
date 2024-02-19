@@ -19,7 +19,7 @@
 				href="/portfolio"
 				class="underline transition-all hover:font-bold">brand identities</a
 			>
-			and diving into marketing. Currently exploring Sveltekit, Python and Java. Studying at
+			and diving into marketing. Currently exploring SvelteKit, Python and Java. Studying at
 			<a href="/cv-education" class="underline transition-all hover:font-bold">Kabataş Erkek.</a>
 			Feel free to shoot me an email -
 			<a href="mailto:me@ondersumer.com" class="underline transition-all hover:font-bold"
