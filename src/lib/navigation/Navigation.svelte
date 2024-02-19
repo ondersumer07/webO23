@@ -105,6 +105,13 @@
 						? 'font-bold underline decoration-2'
 						: ''}>Poem of the day</a
 				>
+				<a
+					href="/quirks/downloads"
+					on:click={drawerClose}
+					class={$page.url.pathname.includes('/downloads')
+						? 'mt-1 font-bold underline decoration-2'
+						: 'mt-1'}>Downloads</a
+				>
 			</div>
 		</li>
 		<li class="m-1 md:hidden">
@@ -120,13 +127,22 @@
 						</p></svelte:fragment
 					>
 					<svelte:fragment slot="content"
-						><a
-							href="/quirks/poem-of-the-day"
-							on:click={drawerClose}
-							class={$page.url.pathname.includes('/poem-of-the-day')
-								? 'font-bold underline decoration-2'
-								: ''}>Poem of the day</a
-						></svelte:fragment
+						><div class="space-y-2">
+							<a
+								href="/quirks/poem-of-the-day"
+								on:click={drawerClose}
+								class={$page.url.pathname.includes('/poem-of-the-day')
+									? 'font-bold underline decoration-2'
+									: ''}>Poem of the day</a
+							>
+							<a
+								href="/quirks/downloads"
+								on:click={drawerClose}
+								class={$page.url.pathname.includes('/downloads')
+									? 'font-bold underline decoration-2'
+									: ''}>Downloads</a
+							>
+						</div></svelte:fragment
 					>
 				</AccordionItem>
 			</Accordion>

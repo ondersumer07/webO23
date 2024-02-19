@@ -1,0 +1,28 @@
+<script>
+	export let hrefLink = '/';
+	export let title = 'Example Title';
+	export let description = 'Example description';
+</script>
+
+<div class="card rounded-lg p-4">
+	<div class="flex flex-row items-center justify-between">
+		<a href={hrefLink} target="_blank" download
+			><h3 class="h4 md:h3 hover:underline">{title}</h3>
+		</a>
+		<a href={hrefLink} target="_blank" download>
+			<svg
+				class="fill-token h-4 w-4 transition-all hover:scale-[1.15] active:scale-[0.75]"
+				id="Layer_5"
+				data-name="Layer 5"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 1500 1500"
+				><path
+					d="M1366.21,1097.73h-94.59a25,25,0,0,0-25,25v104.91a15,15,0,0,1-15,15H268.38a15,15,0,0,1-15-15V1122.73a25,25,0,0,0-25-25H133.79a25,25,0,0,0-25,25v239.82a25,25,0,0,0,25,25H253.38v-.33h993.24v.33h119.59a25,25,0,0,0,25-25V1122.73A25,25,0,0,0,1366.21,1097.73Z"
+				/><path
+					d="M732.36,1105a25,25,0,0,0,35.27,0c75.62-75.26,244.18-244.6,321.74-321.94a25,25,0,0,0,0-35.37l-60.82-60.82a33.85,33.85,0,0,0-47.87,0L822.46,845.13V137.45a25,25,0,0,0-25-25H702.54a25,25,0,0,0-25,25V845.16L513,680.63a25,25,0,0,0-35.35,0l-67.05,67a25,25,0,0,0,0,35.39C488.91,861,656.32,1029.19,732.36,1105Z"
+				/></svg
+			></a
+		>
+	</div>
+	<p class="opacity-60">{description}</p>
+</div>
