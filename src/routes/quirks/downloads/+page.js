@@ -2,7 +2,7 @@ export const load = async () => {
 	try {
 		const fetchDownloads = async () => {
 			const downloadsRes = await fetch(
-				`https://personal-website.pockethost.io/api/collections/downloads/records`
+				`https://personal-website.pockethost.io/api/collections/downloads/records?sort=position`
 			);
 
 			if (!downloadsRes.ok) {
