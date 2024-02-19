@@ -5,7 +5,7 @@
 	let itemNumber = 3;
 </script>
 
-<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+<div class="m-auto grid grid-cols-1 gap-8 md:grid-cols-2 xl:w-3/4">
 	{#await data.streamed?.downloads}
 		{#each { length: itemNumber } as _, i}
 			<div class="card animate-pulse space-y-2 rounded-lg p-4">
