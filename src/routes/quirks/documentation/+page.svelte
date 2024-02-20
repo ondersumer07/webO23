@@ -3,7 +3,7 @@
 </script>
 
 <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
-	<div class="flex flex-col space-y-4">
+	<div class="flex flex-col justify-center space-y-4">
 		<div>
 			<h3 class="h3">Documentation</h3>
 			<p>
@@ -11,7 +11,7 @@
 				publish here. You can select and see the details of your desired component.
 			</p>
 		</div>
-		<div>
+		<div class="flex flex-row">
 			<a
 				class="flex flex-row items-center underline transition-all hover:font-bold"
 				href="https://github.com/ondersumer07"
