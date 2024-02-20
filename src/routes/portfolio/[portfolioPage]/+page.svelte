@@ -13,8 +13,8 @@
 {:then portfolioPage}
 	{#each portfolioPage as portfolioPage}
 		{#if portfolioPage.url === $page.url.pathname}
-			<div class="flex max-w-full items-center justify-center">
-				<div class="flex max-w-7xl flex-col items-center justify-center">
+			<div class="m-auto xl:w-3/4">
+				<div class="flex w-full flex-col items-center justify-center">
 					<h2 class="h2 pb-5 underline decoration-2 transition-all hover:font-black">
 						{portfolioPage.title}
 					</h2>
@@ -44,7 +44,7 @@
 						src={portfolioPage.image5}
 						alt={portfolioPage.image5.length > 0 ? 'Portfolio Image 5' : ''}
 					/>
-					<p class="my-12 text-lg md:mx-36">{@html portfolioPage.longDescription}</p>
+					<p class="my-12 text-lg xl:w-3/4">{@html portfolioPage.longDescription}</p>
 				</div>
 			</div>
 		{/if}
