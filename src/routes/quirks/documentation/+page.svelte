@@ -37,4 +37,11 @@
 		date={'Feb 2024'}
 		hrefLink={'/quirks/documentation/weatherCard'}
 	/>
+	<CardWimage
+		image={'/documentation/musicCard/nowPlayingDemo.gif'}
+		title={'musicCard'}
+		description={"You can use this component to display your music history. Even if it's now playing, it'll deliver the message. Utilizes last.fm API to fetch data from various platforms."}
+		date={'Feb 2024'}
+		hrefLink={'/quirks/documentation/musicCard'}
+	/>
 </div>
