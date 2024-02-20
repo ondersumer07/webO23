@@ -112,6 +112,13 @@
 						? 'mt-1 font-bold underline decoration-2'
 						: 'mt-1'}>Downloads</a
 				>
+				<a
+					href="/quirks/documentation"
+					on:click={drawerClose}
+					class={$page.url.pathname.includes('/documentation')
+						? 'mt-1 font-bold underline decoration-2'
+						: 'mt-1'}>Documentation</a
+				>
 			</div>
 		</li>
 		<li class="m-1 md:hidden">
@@ -141,6 +148,13 @@
 								class={$page.url.pathname.includes('/downloads')
 									? 'font-bold underline decoration-2'
 									: ''}>Downloads</a
+							>
+							<a
+								href="/quirks/documentation"
+								on:click={drawerClose}
+								class={$page.url.pathname.includes('/documentation')
+									? 'font-bold underline decoration-2'
+									: ''}>Documentation</a
 							>
 						</div></svelte:fragment
 					>

@@ -68,7 +68,6 @@
 						{@html lang == 0 ? blogPage.textENG1 : blogPage.textTR1}
 						{#if blogPage.codeLang1}
 							<CodeBlock
-								lineNumbers={true}
 								buttonCopied={'Copied🎉'}
 								language={blogPage.codeLang1}
 								code={blogPage.code1}
@@ -79,7 +78,6 @@
 						{/if}
 						{#if blogPage.codeLang2}
 							<CodeBlock
-								lineNumbers={true}
 								buttonCopied={'Copied🎉'}
 								language={blogPage.codeLang2}
 								code={blogPage.code2}
