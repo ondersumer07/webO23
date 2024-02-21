@@ -6,7 +6,7 @@ export const load = async () => {
 			);
 
 			if (!portfolioRes.ok) {
-				throw new Error('Failed to fetch collections data. Status: ${portfolioRes.status}');
+				throw new Error(`Failed to fetch collections data. Status: ${portfolioRes.status}`);
 			}
 
 			const portfolioData = await portfolioRes.json();

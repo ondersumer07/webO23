@@ -48,10 +48,10 @@
 {:then blogPage}
 	{#each blogPage as blogPage}
 		{#if blogPage.url === $page.url.pathname}
-			<div class="flex max-w-full items-center justify-center">
-				<div class="flex max-w-7xl flex-col items-center justify-center">
+			<div class="m-auto xl:w-3/4">
+				{#if blogPage.translated === 1}
 					<div class="flex w-full items-center justify-center">
-						<div class="card mb-5 p-4 text-justify md:w-3/4">
+						<div class="card mb-5 w-full p-4 text-justify">
 							<p class="text-md">
 								This is a translated version of the original text in Turkish. <button
 									class="underline transition-all hover:font-bold"
@@ -61,34 +61,26 @@
 							</p>
 						</div>
 					</div>
-					<h2 class="h2 pb-8 text-center underline decoration-2 transition-all hover:font-black">
-						{lang == 0 ? blogPage.titleENG : blogPage.titleTR}
-					</h2>
-					<div class="mb-5 text-justify text-lg md:w-3/4">
-						{@html lang == 0 ? blogPage.textENG1 : blogPage.textTR1}
-						{#if blogPage.codeLang1}
-							<CodeBlock
-								lineNumbers={true}
-								buttonCopied={'Copied🎉'}
-								language={blogPage.codeLang1}
-								code={blogPage.code1}
-							></CodeBlock>
-						{/if}
-						{#if blogPage.textENG2}
-							{@html lang == 0 ? blogPage.textENG2 : blogPage.textTR2}
-						{/if}
-						{#if blogPage.codeLang2}
-							<CodeBlock
-								lineNumbers={true}
-								buttonCopied={'Copied🎉'}
-								language={blogPage.codeLang2}
-								code={blogPage.code2}
-							></CodeBlock>
-						{/if}
-						{#if blogPage.textENG3}
-							{@html lang == 0 ? blogPage.textENG3 : blogPage.textTR3}
-						{/if}
-					</div>
+				{/if}
+				<h2 class="h2 pb-8 text-center underline decoration-2 transition-all hover:font-black">
+					{lang == 0 ? blogPage.titleENG : blogPage.titleTR}
+				</h2>
+				<div class="mb-5 text-justify text-lg">
+					{@html lang == 0 ? blogPage.textENG1 : blogPage.textTR1}
+					{#if blogPage.codeLang1}
+						<CodeBlock buttonCopied={'Copied🎉'} language={blogPage.codeLang1} code={blogPage.code1}
+						></CodeBlock>
+					{/if}
+					{#if blogPage.textENG2}
+						{@html lang == 0 ? blogPage.textENG2 : blogPage.textTR2}
+					{/if}
+					{#if blogPage.codeLang2}
+						<CodeBlock buttonCopied={'Copied🎉'} language={blogPage.codeLang2} code={blogPage.code2}
+						></CodeBlock>
+					{/if}
+					{#if blogPage.textENG3}
+						{@html lang == 0 ? blogPage.textENG3 : blogPage.textTR3}
+					{/if}
 				</div>
 			</div>
 		{/if}

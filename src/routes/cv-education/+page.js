@@ -6,7 +6,7 @@ export const load = async () => {
 			);
 
 			if (!workExpRes.ok) {
-				throw new Error('Failed to fetch collections data. Status: ${workExpRes.status}');
+				throw new Error(`Failed to fetch collections data. Status: ${workExpRes.status}`);
 			}
 
 			const workExpData = await workExpRes.json();

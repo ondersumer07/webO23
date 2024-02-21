@@ -30,7 +30,7 @@
 		<img class="rounded-t-lg pt-0" src={image} alt={image.length > 0 ? 'Card' : ''} />
 	</header>
 	<div class="p-4">
-		<h3 class="h3">{title}</h3>
+		<h3 class="h4 md:h3">{title}</h3>
 		<p class="text-md mt-1">
 			{blogDesc}
 		</p>
