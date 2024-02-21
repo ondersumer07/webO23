@@ -49,16 +49,19 @@
 	{#each blogPage as blogPage}
 		{#if blogPage.url === $page.url.pathname}
 			<div class="m-auto xl:w-3/4">
-				<div class="flex w-full items-center justify-center">
-					<div class="card mb-5 w-full p-4 text-justify">
-						<p class="text-md">
-							This is a translated version of the original text in Turkish. <button
-								class="underline transition-all hover:font-bold"
-								on:click={langSwitch}><p>{lang == 0 ? 'See original.' : 'See English.'}</p></button
-							>
-						</p>
+				{#if blogPage.translated === 1}
+					<div class="flex w-full items-center justify-center">
+						<div class="card mb-5 w-full p-4 text-justify">
+							<p class="text-md">
+								This is a translated version of the original text in Turkish. <button
+									class="underline transition-all hover:font-bold"
+									on:click={langSwitch}
+									><p>{lang == 0 ? 'See original.' : 'See English.'}</p></button
+								>
+							</p>
+						</div>
 					</div>
-				</div>
+				{/if}
 				<h2 class="h2 pb-8 text-center underline decoration-2 transition-all hover:font-black">
 					{lang == 0 ? blogPage.titleENG : blogPage.titleTR}
 				</h2>
