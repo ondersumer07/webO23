@@ -66,6 +66,9 @@ This is a customized version of Skeleton's built-in [lightswitch](https://www.sk
 
 ![weatherCardDemo](https://raw.githubusercontent.com/ondersumer07/webO23/master/static/githubReadme/weatherCardDemo.gif)
 
+FEB 2024 - Github page for weatherCard is now open as well as its documentation.
+[View Github](https://github.com/ondersumer07/weatherCard) . [View documentation](https://ondersumer.com/quirks/documentation/weatherCard)
+
 This is a Svelte component I've created using 2 APIs: OpenWeather's [Weather API](https://openweathermap.org/api) and Google Maps' [Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview). Remember that you will need your own API keys for it to function properly. I will name the environment variables later on.
 
 weatherCard's design belongs to me, and it utilizes animated SVGs as background images. There are designated backgrounds for different weather conditions.
@@ -88,6 +91,9 @@ Maps Static API also uses the same `currentCity` variable, so you don't have to 
 ### musicCard
 
 ![musicCardDemo](https://raw.githubusercontent.com/ondersumer07/webO23/master/static/githubReadme/musicCardDemo.gif)
+
+FEB 2024 - Github page for musicCard is now open as well as its documentation.
+[View Github](https://github.com/ondersumer07/musicCard) . [View documentation](https://ondersumer.com/quirks/documentation/musicCard)
 
 I developed musicCard using [Last.fm API](https://www.last.fm/api). All the properties will work nicely once you have your API key and all the necessary elements.
 
