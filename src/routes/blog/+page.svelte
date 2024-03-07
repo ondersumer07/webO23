@@ -2,7 +2,7 @@
 	import CardWimageReadTime from '$lib/cardWimageReadTime/cardWimageReadTime.svelte';
 	export let data;
 
-	let itemNumber = 6;
+	let itemNumber = 7;
 </script>
 
 <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
