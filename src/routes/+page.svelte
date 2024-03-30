@@ -15,7 +15,7 @@
 			>
 		</h1>
 		<p class="text-lg font-light lg:text-2xl">
-			I am an 18 year-old graphic designer based in Istanbul. I love creating <a
+			I am a 19 year-old graphic designer / web developer based in Istanbul. I love creating <a
 				href="/portfolio"
 				class="underline transition-all hover:font-bold">brand identities</a
 			>

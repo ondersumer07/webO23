@@ -299,15 +299,15 @@ let mapsURL =
 		</p>
 		<div class="grid w-full grid-cols-1 md:grid-cols-3">
 			<div>
-				<p class="opacity-60">zoom=7, markers=color:blue|label:A|</p>
+				<p class="text-left opacity-60">zoom=7, markers=color:blue|label:A|</p>
 				<img src="/documentation/weatherCard/zoom7BlueA.png" alt="Adjusted Maps Demo 1" />
 			</div>
 			<div>
-				<p class="opacity-60">zoom=12, markers=color:red|label:O|</p>
+				<p class="text-left opacity-60">zoom=12, markers=color:red|label:O|</p>
 				<img src="/documentation/weatherCard/zoom12.png" alt="Adjusted Maps Demo 2" />
 			</div>
 			<div>
-				<p class="opacity-60">zoom=16, markers=color:green|label:X|</p>
+				<p class="text-left opacity-60">zoom=16, markers=color:green|label:X|</p>
 				<img src="/documentation/weatherCard/zoom16GreenX.png" alt="Adjusted Maps Demo 3" />
 			</div>
 		</div>
