@@ -133,11 +133,9 @@ To run this project, you will need to add the following environment variables to
 
 ## Roadmap
     
-- Create specific project pages for weatherCard and musicCard
-
 - Implement "What's Next / What's Quirks" for Quirks tab
   
-- Open "Downloads" tab
+- Open "Countries I've Been To" page
   
 - Create Link Shortener for custom domain (maybe)
   
