@@ -135,7 +135,7 @@ To run this project, you will need to add the following environment variables to
     
 - Implement "What's Next / What's Quirks" for Quirks tab
   
-- Open "Countries I've Been To" page
+- Open "Countries I've Been To" page using [Google Charts / Geochart](https://developers.google.com/chart/interactive/docs/gallery/geochart)
   
 - Create Link Shortener for custom domain (maybe)
   
