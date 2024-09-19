@@ -4,6 +4,11 @@
 	export let data;
 </script>
 
+<!-- Page Title -->
+<svelte:head>
+	<title>About | Önder Sümer</title>
+</svelte:head>
+
 <div class="m-auto grid grid-cols-1 lg:grid-cols-3 xl:w-3/4">
 	<p class="pb-5 text-lg lg:col-span-2 lg:col-start-1 lg:pr-20">
 		They told me to talk about breaking points on this page, so there it goes. Since I was a child,

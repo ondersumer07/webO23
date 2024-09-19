@@ -7,6 +7,11 @@
 	export let data;
 </script>
 
+<!-- Page Title -->
+<svelte:head>
+	<title>Home | Önder Sümer</title>
+</svelte:head>
+
 <div class="mx-auto grid h-full grid-cols-1 items-center justify-center lg:grid-cols-3 xl:w-3/4">
 	<div class="pb-5 text-justify lg:col-span-2 lg:pb-0 lg:pr-20">
 		<h1 class="h2 pb-1 lg:pb-5">

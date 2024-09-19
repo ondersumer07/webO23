@@ -2,6 +2,11 @@
 	import CardWimage from '$lib/cardWimage/cardWimage.svelte';
 </script>
 
+<!-- Page Title -->
+<svelte:head>
+	<title>Documentation | Önder Sümer</title>
+</svelte:head>
+
 <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
 	<div class="flex flex-col justify-center space-y-4">
 		<div>

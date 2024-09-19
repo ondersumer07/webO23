@@ -5,6 +5,19 @@
 	console.log(data);
 </script>
 
+<!-- Page Title -->
+<svelte:head>
+	{#await data.streamed?.portfolioPage}
+		<title>Portfolio | Önder Sümer</title>
+	{:then portfolioPage}
+		{#each portfolioPage as portfolioPage}
+			{#if portfolioPage.url === $page.url.pathname}
+				<title>{portfolioPage.title} | Önder Sümer</title>
+			{/if}
+		{/each}
+	{/await}
+</svelte:head>
+
 {#await data.streamed?.portfolioPage}
 	<div class="flex animate-pulse flex-col items-center justify-center">
 		<div class="placeholder mb-5 w-1/4" />

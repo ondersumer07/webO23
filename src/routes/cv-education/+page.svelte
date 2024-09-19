@@ -4,6 +4,11 @@
 	export let data;
 </script>
 
+<!-- Page Title -->
+<svelte:head>
+	<title>CV/Education | Önder Sümer</title>
+</svelte:head>
+
 <div class="card m-auto mb-5 p-4 text-justify xl:w-3/4">
 	<p class="text-md">
 		This page is a visual version of my resume. <a

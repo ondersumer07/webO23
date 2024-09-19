@@ -5,6 +5,11 @@
 	let itemNumber = 3;
 </script>
 
+<!-- Page Title -->
+<svelte:head>
+	<title>Downloads | Önder Sümer</title>
+</svelte:head>
+
 <div class="m-auto grid grid-cols-1 gap-8 md:grid-cols-2 xl:w-3/4">
 	{#await data.streamed?.downloads}
 		{#each { length: itemNumber } as _, i}

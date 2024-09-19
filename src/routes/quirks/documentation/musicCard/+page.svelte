@@ -19,6 +19,11 @@
 	storeHighlightJs.set(hljs);
 </script>
 
+<!-- Page Title -->
+<svelte:head>
+	<title>musicCard | Önder Sümer</title>
+</svelte:head>
+
 <div class="m-auto xl:w-3/4">
 	<div class="flex w-full justify-center">
 		<h2 class="h2 inline pb-4 text-center underline decoration-2 transition-all hover:font-black">

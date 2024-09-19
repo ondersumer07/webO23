@@ -2,6 +2,10 @@
 	import { page } from '$app/stores';
 </script>
 
+<svelte:head>
+	<title>Error {$page.status} | Önder Sümer</title>
+</svelte:head>
+
 <div class="mt-20 flex flex-col items-center justify-center">
 	<svg
 		class="fill-token h-60 w-60"

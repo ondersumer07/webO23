@@ -85,6 +85,11 @@
 	}
 </script>
 
+<!-- Page Title -->
+<svelte:head>
+	<title>Poem of the day | Önder Sümer</title>
+</svelte:head>
+
 <!-- Needed for toast to work -->
 <Toast />
 

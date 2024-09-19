@@ -35,6 +35,19 @@
 	}
 </script>
 
+<!-- Page Title -->
+<svelte:head>
+	{#await data.streamed?.blogPage}
+		<title>Blog | Önder Sümer</title>
+	{:then blogPage}
+		{#each blogPage as blogPage}
+			{#if blogPage.url === $page.url.pathname}
+				<title>{blogPage.titleENG} | Önder Sümer</title>
+			{/if}
+		{/each}
+	{/await}
+</svelte:head>
+
 {#await data.streamed?.blogPage}
 	<div class="flex animate-pulse flex-col items-center justify-center">
 		<div class="placeholder mb-5 w-1/4" />
