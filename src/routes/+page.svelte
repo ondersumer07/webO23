@@ -20,12 +20,12 @@
 			>
 		</h1>
 		<p class="text-lg font-light lg:text-2xl">
-			I am a 19 year-old graphic designer / web developer based in Istanbul. I love creating <a
+			I am a 19 year-old graphic designer / web developer based in Rome. I love creating <a
 				href="/portfolio"
 				class="underline transition-all hover:font-bold">brand identities</a
 			>
 			and diving into marketing. Currently exploring SvelteKit, Python and Java. Studying at
-			<a href="/cv-education" class="underline transition-all hover:font-bold">Kabataş Erkek.</a>
+			<a href="/cv-education" class="underline transition-all hover:font-bold">Sapienza.</a>
 			Feel free to shoot me an email -
 			<a href="mailto:me@ondersumer.com" class="underline transition-all hover:font-bold"
 				>let's chat!</a

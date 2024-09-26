@@ -5,7 +5,7 @@
 
 	// Set default variables
 	export let currentCity = 'Ankara';
-	export let timezoneCity = 'Europe/Istanbul';
+	export let timezoneCity = 'Europe/Rome';
 	export let weatherState = 'Sunny';
 	export let degreesCelcius = 21;
 	export let mapsURL = '';

@@ -3,7 +3,7 @@ import { OPEN_WEATHER_API_KEY } from '$env/static/private';
 import { MAPS_API_KEY } from '$env/static/private';
 
 // City to change when I leave Istanbul
-let currentCity = 'Istanbul';
+let currentCity = 'Rome, IT';
 
 // Create mapsURL
 let mapsURL =
