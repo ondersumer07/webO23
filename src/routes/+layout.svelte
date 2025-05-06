@@ -35,6 +35,20 @@
 	const drawerStore = getDrawerStore();
 	const toastStore = getToastStore();
 
+	// Progress bar for navigations
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
+	import NProgress from 'nprogress';
+	import 'nprogress/nprogress.css'; // you can override this with your own styles
+
+	beforeNavigate(() => {
+		NProgress.start();
+	});
+
+	afterNavigate(() => {
+		NProgress.done();
+	});
+
+
 	// Email Constant
 	const email = 'me@ondersumer.com';
 

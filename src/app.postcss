@@ -1,8 +1,27 @@
+@import 'nprogress/nprogress.css';
+
 /* Skeleton V2.x requirement */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+
+
+/* Override nprogress bar style */
+#nprogress .bar {
+	background-color: rgb(var(--color-primary-500)) !important; /* if using Skeleton color tokens */
+	height: 2.5px !important;
+	transition: all 0.2s ease-out !important;
+}
+
+#nprogress .peg {
+	box-shadow: 0 0 10px rgb(var(--color-primary-400)), 0 0 5px rgb(var(--color-primary-400)) !important;
+}
+
+#nprogress .spinner {
+	display: none !important;
+}
 
 /*place global styles here */
 html,
